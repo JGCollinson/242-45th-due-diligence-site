@@ -1,0 +1,23 @@
+// Re-exports Cursor canvas primitives from the patched runtime bundle.
+export {
+  BarChart,
+  Callout,
+  Card,
+  CardBody,
+  CardHeader,
+  Divider,
+  Grid,
+  H1,
+  H2,
+  H3,
+  LineChart,
+  Link,
+  PieChart,
+  Pill,
+  Row,
+  Stack,
+  Stat,
+  Table,
+  Text,
+  useHostTheme,
+} from "../vendor/canvas-runtime.esm.js";
