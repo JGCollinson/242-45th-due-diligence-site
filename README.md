@@ -27,7 +27,7 @@ Open http://localhost:5173
    git push -u origin main
    ```
 
-3. In the repo on GitHub: **Settings → Pages → Build and deployment → Source: Deploy from a branch** → Branch: **gh-pages** → Folder: **/ (root)** → Save.
+3. In the repo on GitHub: **Settings → Pages → Build and deployment → Source: GitHub Actions** (the deploy script sets this; do not use “Deploy from a branch” on `main`, or builds will break).
 4. After the workflow finishes, the site is at:
 
    https://jgcollinson.github.io/242-45th-due-diligence-site/
