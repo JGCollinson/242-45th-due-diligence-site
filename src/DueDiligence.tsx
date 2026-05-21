@@ -263,7 +263,7 @@ export default function DueDiligence() {
         rows={[
           [
             "Heating / boiler",
-            "Age, fuel type, last inspection. If converted from oil, ask for proof of underground oil tank removal/abandonment with sworn statement; orphan tanks are a major liability.",
+            "Gas-fired Weil McLain circulating boiler (MFG 02/2013) — confirm annual service, combustion air, and venting. Focus on heat-exchanger condition and circulator maintenance.",
           ],
           [
             "Hot water",
@@ -317,8 +317,8 @@ export default function DueDiligence() {
             "Termites (less common in NYC but present), carpenter ants, rodent burrows along areaway and rear yard, roach evidence in cabinetry.",
           ],
           [
-            "Oil tank / soil",
-            "If ever oil-heated, verify tank removal documentation. Sunset Park has industrial history nearby; review NYS DEC Environmental Site Remediation map for E-designations or spills on the block.",
+            "Site environmental (DEC)",
+            "Sunset Park has industrial history nearby — review NYS DEC Environmental Site Remediation map for E-designations or spills on the block.",
           ],
         ]}
       />
@@ -558,8 +558,8 @@ export default function DueDiligence() {
             separations, illegal unit check, cellar habitability).
           </Text>
           <Text>
-            · No environmental: lead paint, asbestos, mold testing, radon,
-            buried oil tank — all explicitly excluded.
+            · No environmental: lead paint, asbestos, mold testing, radon —
+            all explicitly excluded.
           </Text>
           <Text>
             · Sewer lateral was not scoped — strongly add a separate
@@ -589,8 +589,7 @@ export default function DueDiligence() {
         17.33 x 100.17 ft lot · 2 stories above grade (~1,500 sf) + finished
         basement (~575 sf) · legal 2-family being sold as a single · MLS
         RLS20079085 · brick row-house with intact original cornice and
-        brownstone window trim · ~$580 / sf inclusive of basement. Cellar bar
-        is aesthetic only (no plumbing).
+        brownstone window trim · ~$580 / sf inclusive of basement.
       </Text>
 
       <Divider />
@@ -678,7 +677,7 @@ export default function DueDiligence() {
           [
             "Cellar legal status",
             "Possible $150–300k upside if legalizable",
-            "Cellar finished (LVP, recessed lights, music studio, mini-split, pool table). Inspector limited by finishes. Bar is plumbing-free.",
+            "Cellar finished (LVP, recessed lights, music studio, mini-split, pool table). Inspector limited by finishes.",
             "Risk still moderate — back-file ACP for finishes/electric/mini-split if not on record. $3–10k.",
           ],
           [
@@ -1027,9 +1026,9 @@ export default function DueDiligence() {
         rowTone={["warning", undefined, undefined, undefined, undefined, undefined, undefined, undefined, "warning", undefined]}
         rows={[
           [
-            "Cellar (rec + studio + cosmetic bar)",
-            "Recessed lighting, LVP flooring, sound-treated music studio, pool table, gym, mini-split (FAILED at inspection — see HVAC findings), plus a cosmetic-only bar (no plumbing). Fully finished. Inspector noted finishes prevented full assessment of foundation walls / beams / slab.",
-            "Moderate risk. No plumbed bar = no illegal-apartment evidence. Remaining concern is whether finish work (electrical, partitions, recessed lighting, mini-split install) was permitted. Cheap belated ACP filing if not. Mini-split must be replaced or repaired with credit.",
+            "Cellar (rec room + studio)",
+            "Recessed lighting, LVP flooring, sound-treated music studio, pool table, gym, mini-split (FAILED at inspection — see HVAC findings). Fully finished. Inspector noted finishes prevented full assessment of foundation walls / beams / slab.",
+            "Moderate risk. Remaining concern is whether finish work (electrical, partitions, recessed lighting, mini-split install) was permitted. Cheap belated ACP filing if not. Mini-split must be replaced or repaired with credit.",
           ],
           [
             "Mechanical room (corrected per inspection)",
@@ -1220,28 +1219,24 @@ export default function DueDiligence() {
           permit; list any exceptions.
         </Text>
         <Text>
-          6. Provide a sworn statement regarding any underground or aboveground
-          oil tank: presence, location, removal date, NYSDEC paperwork.
-        </Text>
-        <Text>
-          7. Provide the lead paint disclosure (federal Title X) and any prior
+          6. Provide the lead paint disclosure (federal Title X) and any prior
           XRF or risk assessment.
         </Text>
         <Text>
-          8. Confirm in writing that the building has only two dwelling units
+          7. Confirm in writing that the building has only two dwelling units
           and the cellar is not used or rented as a separate dwelling.
         </Text>
         <Text>
-          9. Provide last three years of water/sewer bills and Con Ed bills
+          8. Provide last three years of water/sewer bills and Con Ed bills
           (electric and gas) per unit — useful for inspector cross-checks and
           to spot a hidden third meter.
         </Text>
         <Text>
-          10. Disclose any flooding, sewer back-up, mold remediation, or
+          9. Disclose any flooding, sewer back-up, mold remediation, or
           structural repair within the last 10 years.
         </Text>
         <Text>
-          11. Provide proof of any homeowner&apos;s insurance claims filed at
+          10. Provide proof of any homeowner&apos;s insurance claims filed at
           the property.
         </Text>
       </Stack>
