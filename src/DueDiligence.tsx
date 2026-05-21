@@ -606,9 +606,9 @@ export default function DueDiligence() {
           <Text weight="semibold">cosmetic</Text> story — but corrects the{" "}
           <Text weight="semibold">mechanical</Text> story in three big ways:
           (a) the mini-splits photographed everywhere are{" "}
-          <Text weight="semibold">2 of 3 not working</Text>; (b) what looked
-          like two old water heaters is actually one 2019 indirect tank + the
-          2013 gas boiler that feeds it; (c) the electrical service is
+          <Text weight="semibold">2 of 3 not working</Text>;           (b) listing photos show a disconnected legacy water heater next to
+          one active 2019 indirect tank (blue) and the 2013 gas boiler — not
+          two operating systems; (c) the electrical service is
           considerably better than assumed. Net: the dominant value lever is
           still legal 2-family restoration, and it's now{" "}
           <Text weight="semibold">cheaper</Text> on electrical but{" "}
@@ -659,8 +659,8 @@ export default function DueDiligence() {
           [
             "Boiler + hot water",
             "Boiler 20+ yrs old, retire + heat-pump water heater play",
-            "Boiler is 2013 (12–13 yrs, fair). HW is 2019 indirect 50-gal Burnham fed by the boiler (6–7 yrs). One tank, not two.",
-            "DELETE the heat-pump-WH retirement play — both systems have 5+ yrs of useful life. Save $5–10k.",
+            "Active: 2013 gas boiler + 2019 Burnham indirect tank (blue), both fair per inspection. Photos also show an older water heater disconnected and unused.",
+            "DELETE the boiler-retire play. Don't infer 2-family readiness from mech-room tank count — per-floor sub-panels are the signal. Save $5–10k.",
           ],
           [
             "Roof",
@@ -1032,8 +1032,8 @@ export default function DueDiligence() {
           ],
           [
             "Mechanical room (corrected per inspection)",
-            "Weil McLain gas boiler (MFG 02/2013, 12–13 yrs, fair). ONE 50-gal Burnham indirect HW tank (MFG 05/2019, 6–7 yrs, fair) heated by the boiler — not two separate heaters as the photo first suggested. Copper repipe visible. Some ceiling water-staining above mech. Washer/dryer present.",
-            "Major correction: don't retire the boiler — it has 5–7 yrs of useful life left. Don't replace the HW tank — it's 2019. Service contract only ($300–500/yr) and patch the ceiling leak source. Saves $5–10k vs the prior plan.",
+            "In service: Weil McLain gas boiler (MFG 02/2013, fair) + one 50-gal Burnham indirect HW tank (MFG 05/2019, blue, boiler-fed). Listing photos also show an older water heater disconnected and unused — not part of the active system. Copper repipe, washer/dryer. Listing photos may show ceiling discoloration above the mech room; not called out in the 5/20/2026 inspection.",
+            "Keep both active systems on an annual service contract (~$300–500/yr). Do not retire the boiler or replace the 2019 indirect tank. 2-family separation is aided by per-floor electrical sub-panels, not by multiple water heaters. If ceiling discoloration in photos is real, ask the seller for cause before assuming an active leak.",
           ],
           [
             "Kitchen (ground floor)",
@@ -1197,9 +1197,9 @@ export default function DueDiligence() {
           kitchen cooktop igniter.
         </Text>
         <Text>
-          2. <Text weight="semibold">(New from inspection)</Text> Disclose
-          the source of the ceiling water-staining above the mechanical room
-          and confirm whether any plumbing leak has been repaired.
+          2. If listing photos show ceiling discoloration above the mechanical
+          room, disclose cause and any prior repair (not flagged in the
+          5/20/2026 inspection).
         </Text>
         <Text>
           3. <Text weight="semibold">(New from inspection)</Text> Provide
