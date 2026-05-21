@@ -34,18 +34,30 @@ export default function DueDiligence() {
       <Grid columns={5} gap={12}>
         <Stat value="0" label="Certificates of Occupancy on file" tone="warning" />
         <Stat value="1" label="Open A2 permit never signed off" tone="warning" />
-        <Stat value="2" label="ECB violations (both dismissed)" />
-        <Stat value="2" label="DOB violations (both dismissed)" />
-        <Stat value="IBZ" label="In Industrial Business Zone" tone="info" />
+        <Stat value="2 of 3" label="Mini-splits failed at inspection" tone="danger" />
+        <Stat value="14–16 yr" label="Roof age (design life 18–20)" tone="warning" />
+        <Stat value="3 × 100A" label="Electrical service (per-floor sub-panels)" tone="success" />
       </Grid>
 
       <Callout
         tone="danger"
-        title="Top three things to resolve before you remove the inspection contingency"
+        title="Top four things to resolve before you remove the inspection contingency"
       >
         <Stack gap={6}>
           <Text>
-            <Text weight="semibold">1. No Certificate of Occupancy on file.</Text>{" "}
+            <Text weight="semibold">
+              1. Two of three mini-split heat pumps failed at inspection
+              (5/20/2026).
+            </Text>{" "}
+            Inspector confirmed the upper-level Fujitsu unit works, but the
+            main-level and basement units would not start when tested.
+            Equipment is 12–13 yrs old (design life 18–20). This is the
+            single biggest cash item from the inspection and must be a seller
+            credit, contract repair, or price reduction. Budget $12–25k to
+            replace two systems with modern high-efficiency mini-splits.
+          </Text>
+          <Text>
+            <Text weight="semibold">2. No Certificate of Occupancy on file.</Text>{" "}
             For a pre-1938 building this is common, but you must obtain a Letter
             of No Objection (LNO) from DOB confirming legal use as a 2-family
             dwelling. Without it, the seller cannot prove the legal occupancy
@@ -54,7 +66,7 @@ export default function DueDiligence() {
           </Text>
           <Text>
             <Text weight="semibold">
-              2. Job #301532535 (A2, 2003) is &quot;PERMIT-PARTIAL&quot; — never
+              3. Job #301532535 (A2, 2003) is &quot;PERMIT-PARTIAL&quot; — never
               signed off.
             </Text>{" "}
             A permit was pulled to renovate the 2-family but the job was never
@@ -65,13 +77,13 @@ export default function DueDiligence() {
           </Text>
           <Text>
             <Text weight="semibold">
-              3. Two prior &quot;work without permit&quot; violations.
+              4. Two prior &quot;work without permit&quot; violations.
             </Text>{" "}
             Both ECB and DOB violations from 2001 and 2003 were ultimately
             dismissed, but the pattern suggests historic unpermitted work.
-            Cross-check what's actually built today against the 2003 plans and
-            ask the inspector to flag anything that looks newer than the
-            permitted scope (CEL, 1st, 2nd floors).
+            The inspector also noted the basement is fully finished with
+            recessed lighting, mini-split, partitions, and LVP — confirm none
+            of that was permitted, and back-file if needed.
           </Text>
         </Stack>
       </Callout>
@@ -340,6 +352,232 @@ export default function DueDiligence() {
 
       <Divider />
 
+      <H2>Inspection findings — 5/20/2026 (Massive Inspection Services)</H2>
+      <Text tone="secondary">
+        Walked by William Basch (NYS Lic. #16000013178). Report ID 052026WB2.
+        Below: the items that moved the underwriting needle. Many earlier
+        assumptions about the mechanicals were wrong — some better, some
+        materially worse.
+      </Text>
+
+      <Grid columns={4} gap={12}>
+        <Stat value="2013" label="Boiler MFG date (Weil McLain gas, ~13 yr)" tone="info" />
+        <Stat value="2019" label="Indirect HW tank MFG (50 gal Burnham, ~7 yr)" tone="success" />
+        <Stat value="None" label="Roof / top-floor ceiling insulation" tone="warning" />
+        <Stat value="Brick" label="Foundation walls (wood joists/beams)" />
+      </Grid>
+
+      <Callout
+        tone="danger"
+        title="Material change: HVAC is the biggest new cash item — negotiate it"
+      >
+        <Text>
+          The prior plan assumed the mini-splits were a non-issue (&quot;remove
+          from major budget, ~$3–5k touch-ups&quot;). The inspector found{" "}
+          <Text weight="semibold">two of three</Text> heat-pump zones
+          (main-level + basement) <Text weight="semibold">failed to start</Text>{" "}
+          when tested. Units are 12–13 yrs old, well into the back half of
+          their 18–20 yr design life. Combined with the &quot;Repair or
+          Replace&quot; rating, a competent HVAC service call will likely
+          recommend{" "}
+          <Text weight="semibold">replacement, not repair</Text>, for both
+          failed zones. Treat as a $12–25k credit ask from the seller; do
+          not absorb this on your side.
+        </Text>
+      </Callout>
+
+      <H3>Inspector "Repair or Replace" items (negotiate as seller credits)</H3>
+      <Table
+        headers={["#", "Item", "Finding", "Est. cost", "Negotiation posture"]}
+        columnAlign={["right", "left", "left", "right", "left"]}
+        rowTone={[
+          "danger",
+          "warning",
+          "warning",
+          "warning",
+          "warning",
+          undefined,
+          undefined,
+          undefined,
+          undefined,
+          undefined,
+        ]}
+        rows={[
+          [
+            "1",
+            "Cooling — main-level + basement mini-splits failed",
+            "Two of three Fujitsu split-system heat pumps would not start when tested. 12–13 yrs old.",
+            "$12–25k",
+            "Seller credit at full replacement value (modern high-SEER mini-splits + line sets). This is the biggest line item from the inspection.",
+          ],
+          [
+            "2",
+            "Upper-floor sub-panel cover not seating properly",
+            "Recessed breakers, panel cover no longer safely seals wiring. Active electrical hazard.",
+            "$0.5–1.5k",
+            "Insist on pre-closing repair by licensed electrician with paperwork. Safety item, not a credit item.",
+          ],
+          [
+            "3",
+            "Main-level sub-panel open slot + no circuit labeling",
+            "One open slot exposes live bus; circuits unlabeled at both sub-panels.",
+            "$0.3–0.8k",
+            "Combine with #2 — licensed electrician trace + label all 3 panels + close slot.",
+          ],
+          [
+            "4",
+            "Front-entry handrails loose",
+            "Handrails at front stoop loose, need reinforcement. Safety / trip-and-fall liability.",
+            "$0.3–0.8k",
+            "Punch list before closing or $500 credit. Critical if renting upper unit.",
+          ],
+          [
+            "5",
+            "Front walkway settled / cracked / uneven step",
+            "Trip hazard at main entry. Will worsen with freeze–thaw cycles.",
+            "$1.5–4k",
+            "Seller fix or credit. Cosmetically obvious from the curb — also a listing-photo issue at resale.",
+          ],
+          [
+            "6",
+            "Bilco basement door has daylight gaps",
+            "Water intrusion risk into the finished basement (your future rental income).",
+            "$0.4–1k",
+            "Punch list. New gasket + threshold seal.",
+          ],
+          [
+            "7",
+            "Basement stair risers uneven / steep",
+            "Trip hazard on the staircase to the finished cellar. Code & safety issue for tenant access.",
+            "$2–5k",
+            "Carpenter to re-cut risers / treads. If you're renting the upstairs separately, this is mostly aesthetic; if cellar is part of owner unit, it's still a liability fix.",
+          ],
+          [
+            "8",
+            "Upper-bath light fixture not working",
+            "Possibly burned bulb or failed fixture. GFCI receptacle tested OK.",
+            "$0.1–0.4k",
+            "Seller punch list. Trivial.",
+          ],
+          [
+            "9",
+            "Main-bath exhaust fan loud + missing cover",
+            "Motor likely failing; cover absent.",
+            "$0.2–0.5k",
+            "Replace fan ($150 unit) + grille. Punch list.",
+          ],
+          [
+            "10",
+            "Kitchen cooktop front-right burner igniter failed",
+            "Single burner igniter not lighting.",
+            "$0.1–0.4k",
+            "Seller punch list. Trivial.",
+          ],
+        ]}
+      />
+
+      <H3>Inspector "Fair condition" items (plan, don't panic)</H3>
+      <Table
+        headers={["Item", "Finding", "Implication"]}
+        rows={[
+          [
+            "Roof — rubberized / rolled membrane",
+            "14–16 yrs old, design life 18–20 yrs. Recently silver-coated as stopgap. No active leaks at inspection.",
+            "Plan for full replacement in 2–4 yrs. Budget $25–45k for new modified-bitumen flat roof on this footprint. Combine with adding roof insulation since none currently exists.",
+          ],
+          [
+            "Gas boiler — Weil McLain (MFG 02/2013)",
+            "Functional and in fair condition. 12–13 yrs old, design life 18–20 yrs.",
+            "Don't replace prematurely — significantly newer than the prior assumption of '20+ yrs.' Service contract (~$300–500/yr) and run another 5–7 yrs. Removes ~$5–10k of the prior budget.",
+          ],
+          [
+            "Indirect HW tank — Burnham 50 gal (MFG 05/2019)",
+            "~6–7 yrs old, design life 18–20 yrs. Functional.",
+            "Excellent. Removes the prior 'heat-pump water heater retire-boiler' play. The tank is fed by the boiler — if you ever retire the boiler, you'd lose the existing HW source and need to repipe.",
+          ],
+          [
+            "Roof / top-floor ceiling insulation",
+            "Inspector explicitly notes no insulation found between upper-level ceiling and roof.",
+            "Add R-49 batts or blown-in cellulose when the roof is replaced — typical $3–6k incremental and qualifies for utility rebates.",
+          ],
+          [
+            "Top-floor rear bedroom window — failed vacuum seal",
+            "Right window in upper-level rear bedroom shows moisture / cloudiness between panes. Insulation value mostly retained.",
+            "Defer. Replace IGU only ($300–800) at next bedroom paint cycle.",
+          ],
+          [
+            "Mixed-material plumbing waste lines",
+            "Water supply is copper (good). Some distribution piping has been upgraded, but main waste / drain lines exiting to the city are original. Subject to ongoing corrosion.",
+            "Add a sewer-camera scope before closing — $400–800 alone, and budget $5–15k for a spot repair if the camera shows defects. Original cast-iron stacks may need full re-line in 5–10 yrs.",
+          ],
+          [
+            "Sump pump in basement floor (sealed pit)",
+            "Pump present but could not be tested — sealed cover, low water in pit.",
+            "Functional verification before closing. Add a battery backup or generator-fed circuit if you ever finish the basement as legal space.",
+          ],
+          [
+            "Foundation walls — brick, with finished walls covering most of basement",
+            "Inspector could not assess most of the foundation due to the finished basement (LVP floor, drywall, storage). Reported satisfactory where visible.",
+            "Accept the limitation but make the back-filing of the cellar finish work (callout #4 above) a condition. Any latent water-penetration history would surface in the seller's disclosure or in the neighbor's history.",
+          ],
+        ]}
+      />
+
+      <H3>Inspector confirmations (good news — moves the budget down)</H3>
+      <Table
+        headers={["System", "Confirmed condition", "Why it matters for ROI"]}
+        rowTone={["success", "success", "success", "success"]}
+        rows={[
+          [
+            "Electrical service",
+            "3 × 100A main panel + two 60A sub-panels (one per floor). Copper branch wiring. GFCIs at baths + kitchen counters.",
+            "300A total service is ample for a fully separated 2-family. Per-floor sub-panels mean the building is already physically configured for unit-by-unit metering — separating the panels for sub-metering Con Ed is mostly a paperwork + meter-pan job, not a full re-wire. Drops the 2-family separation budget by $5–10k vs the prior assumption.",
+          ],
+          [
+            "Roof drainage, flashings, skylights",
+            "All rated satisfactory. Three fixed skylights, brick chimney + metal flue. No active leaks.",
+            "Skylights in the upstairs family room are intact and watertight — protect during any unit-2 kitchen build-out.",
+          ],
+          [
+            "Heating distribution — gas boiler with hydronic radiators + baseboard",
+            "Functional at inspection, fair condition for age, MFG 02/2013.",
+            "Confirms the building has a centralized heat source you can keep for ~5–7 more years. Don't include premature boiler replacement in Phase 1.",
+          ],
+          [
+            "Detectors, GFCIs, water flow, fixture drainage, exterior siding (brick)",
+            "All rated satisfactory.",
+            "No hidden punch list under these headings. Brick exterior + intact cornice on front facade confirm earlier photo analysis.",
+          ],
+        ]}
+      />
+
+      <Callout tone="info" title="What the inspection did NOT cover (still on your list)">
+        <Stack gap={4}>
+          <Text>
+            · No code-compliance review (legal use, egress, fire-rated
+            separations, illegal unit check, cellar habitability).
+          </Text>
+          <Text>
+            · No environmental: lead paint, asbestos, mold testing, radon,
+            buried oil tank — all explicitly excluded.
+          </Text>
+          <Text>
+            · Sewer lateral was not scoped — strongly add a separate
+            sewer-camera before closing ($400–800).
+          </Text>
+          <Text>
+            · Heat exchanger condition inside boiler not assessed (visual only).
+          </Text>
+          <Text>
+            · Most of the foundation, slab, beams, and party walls were behind
+            finishes — the 2003 unpermitted-work risk is not addressed by this
+            report and remains a paperwork / DOB issue.
+          </Text>
+        </Stack>
+      </Callout>
+
+      <Divider />
+
       <H2>Listing snapshot (Redfin)</H2>
       <Grid columns={4} gap={12}>
         <Stat value="$1.275M" label="List price" />
@@ -357,154 +595,201 @@ export default function DueDiligence() {
 
       <Divider />
 
-      <H2>Photo &amp; floor-plan analysis</H2>
+      <H2>Photo, floor-plan, and inspection cross-check</H2>
       <Callout
         tone="warning"
-        title="Property is turn-key, not a fixer — the value play is re-positioning, not renovation"
+        title="Property is turn-key on finishes — but the mechanicals are NOT what the photos suggested"
       >
         <Text>
-          The owner-provided photos show this is essentially a finished home:
-          updated kitchen, fully tiled modern bathrooms, refinished hardwood,
-          mini-split heat pumps in every zone, and a heavily built-out basement
-          with music studio, bar, pool table, gym, and recessed lighting.
-          Several items I previously priced as &quot;renovate&quot; are{" "}
-          <Text weight="semibold">already done</Text> — re-prioritized below.
-          The dominant remaining value lever is still restoring the legal
-          2-family, but the path is now <Text weight="semibold">cheaper</Text>{" "}
-          because the building systems are already split-ready.
+          Photos show a finished home: updated kitchen, modern tiled bathrooms,
+          refinished hardwood, mini-splits in every zone, and a heavily built-out
+          basement. The inspection confirms most of that{" "}
+          <Text weight="semibold">cosmetic</Text> story — but corrects the{" "}
+          <Text weight="semibold">mechanical</Text> story in three big ways:
+          (a) the mini-splits photographed everywhere are{" "}
+          <Text weight="semibold">2 of 3 not working</Text>; (b) what looked
+          like two old water heaters is actually one 2019 indirect tank + the
+          2013 gas boiler that feeds it; (c) the electrical service is
+          considerably better than assumed. Net: the dominant value lever is
+          still legal 2-family restoration, and it's now{" "}
+          <Text weight="semibold">cheaper</Text> on electrical but{" "}
+          <Text weight="semibold">$10–20k more expensive</Text> on HVAC.
         </Text>
       </Callout>
 
-      <H3>What changed after the photo review</H3>
+      <H3>What changed after photo + inspection review</H3>
       <Table
-        headers={["Item", "Earlier assumption", "Now confirmed from photos", "Impact"]}
-        rowTone={[undefined, "success", "success", "warning", "warning", undefined, undefined, undefined]}
+        headers={["Item", "Earlier assumption", "Confirmed from photos + inspection", "Net impact"]}
+        rowTone={[
+          undefined,
+          "danger",
+          "success",
+          "success",
+          "warning",
+          "success",
+          undefined,
+          undefined,
+          undefined,
+          "warning",
+        ]}
         rows={[
           [
             "Total bathroom count",
             "Possibly need to add a 3rd bath",
-            "Two baths confirmed (small one off ground-floor dining; primary upstairs)",
-            "Each unit will have its own bath after re-separation. Adding a 3rd upstairs is a luxury upgrade, not a necessity.",
+            "Two baths confirmed — upper full, main 3/4 (stall + GFCI verified). Upper-bath light failed; main-bath fan loud + cover missing.",
+            "Each unit gets a bath after separation. 3rd upstairs bath is now a marginal-ROI upgrade, not a necessity.",
           ],
           [
-            "Heat pump / HVAC modernization",
-            "$15–30k upgrade",
-            "Mini-splits visible in kitchen, upper family room, master bed, basement, rear wall",
-            "Remove from major budget. ~$3–5k touch-ups only.",
+            "Heat pump / HVAC condition",
+            "Mini-splits everywhere — assume $3–5k touch-ups",
+            "Inspector: 2 of 3 Fujitsu mini-splits FAILED to start (main + basement). Upper-floor unit works. All units 12–13 yrs.",
+            "Add $12–25k for two-zone replacement, or get equivalent seller credit. Biggest single inspection cost delta.",
+          ],
+          [
+            "Electrical service",
+            "60A or 100A pre-war service typical; sub-meter is a job",
+            "Confirmed 3 × 100A main + two 60A sub-panels, one per floor. Copper branch wiring throughout.",
+            "Removes $5–10k from the 2-family separation budget. The building is already physically configured for per-floor metering.",
+          ],
+          [
+            "Sub-panel safety",
+            "Not flagged",
+            "Upper sub-panel cover doesn't seat over recessed breakers; main-level sub-panel has an open slot. Neither labeled.",
+            "Add $1–2k for licensed electrician to make safe + label all panels — required before closing.",
+          ],
+          [
+            "Boiler + hot water",
+            "Boiler 20+ yrs old, retire + heat-pump water heater play",
+            "Boiler is 2013 (12–13 yrs, fair). HW is 2019 indirect 50-gal Burnham fed by the boiler (6–7 yrs). One tank, not two.",
+            "DELETE the heat-pump-WH retirement play — both systems have 5+ yrs of useful life. Save $5–10k.",
+          ],
+          [
+            "Roof",
+            "Standard NYC flat roof — defer",
+            "Inspector: 14–16 yrs old, design life 18–20. Recently silver-coated as stopgap. No active leaks but near end of life.",
+            "Schedule full roof replacement for Phase 2 (yr 2–4): $25–45k. Add roof insulation at the same time (none currently).",
           ],
           [
             "Facade repointing + stoop refresh",
             "$10–25k",
-            "Front facade is immaculate — recent pointing, original cornice, brownstone lintels, gas lantern",
-            "Defer indefinitely. Rear brick may still need $5–10k.",
+            "Front facade immaculate. Front handrails loose, walkway settled / cracked (trip hazard).",
+            "Defer brick. $2–5k punch list on stoop / handrails / walkway. Critical if renting.",
           ],
           [
             "Cellar legal status",
             "Possible $150–300k upside if legalizable",
-            "Cellar is fully finished (recessed lights, LVP, music studio, pool table, gym, mini-split). Bar is aesthetic only — no plumbing, no kitchen.",
-            "Risk is moderate — no smoking gun for illegal apartment. Concern is whether finish work + electrical + mini-split were permitted. Likely a small back-filing exposure.",
+            "Cellar finished (LVP, recessed lights, music studio, mini-split, pool table). Inspector limited by finishes. Bar is plumbing-free.",
+            "Risk still moderate — back-file ACP for finishes/electric/mini-split if not on record. $3–10k.",
           ],
           [
-            "Boiler / mechanicals",
-            "Standard replace",
-            "Boiler appears 20+ yrs old; 2 water heaters in mechanical room (suggests prior 2-unit hot-water split); some ceiling water damage",
-            "Plan for boiler retire + heat-pump water heater. $5–10k.",
-          ],
-          [
-            "Kitchen condition",
+            "Kitchen + master bath condition",
             "Recently renovated",
-            "Confirmed: gray textured cabinets, quartz counters, brick backsplash, gas range + wall oven, dishwasher, full-size fridge w/ ice. Don't touch.",
-            "Save the $40–80k previously hinted at.",
+            "Kitchen: gray cabinets, quartz, gas cooktop (front-right igniter failed), wall oven (9–10 yrs). Master bath: high-end slate + walnut.",
+            "Don't touch. Save the $40–80k. $200 cooktop-igniter fix on punch list.",
           ],
           [
-            "Master bath condition",
-            "Unknown",
-            "High-end: slate large-format tile shower, glass enclosure, rain head, pebble floor, floating walnut vanity. Premium finish.",
-            "Save bathroom budget. Use the look as the template for any unit-2 bath.",
-          ],
-          [
-            "Tiny bedroom (11'5\" x 7' = 80 sf)",
-            "Not flagged",
-            "Floor plan confirms — right at NYC legal minimum. Marketed as 3-bed but two of the three bedrooms are <100 sf.",
-            "Combine with adjacent 16x9 bedroom to make true primary suite OR keep for resale '3-bed' label.",
+            "Sewer / waste lines",
+            "Not specifically flagged",
+            "Inspector: main waste lines original to the building, mixed-material — anticipate repair/upgrade.",
+            "Schedule pre-closing sewer-camera scope ($400–800). Budget $5–15k for partial relining within 5–10 yrs.",
           ],
         ]}
       />
 
       <Divider />
 
-      <H2>Value-improvement priorities (revised)</H2>
+      <H2>Value-improvement priorities (post-inspection re-ranking)</H2>
       <Text tone="secondary">
-        Ranked by projected return on dollars invested. Cost ranges are NYC
-        retail (licensed GC, permitted work, Brooklyn row-house pricing, mid
-        2026). Value impact uses comparable Sunset Park / Greenwood / Park
-        Slope sales and current 4.5–5% rental cap rates for income items.
+        Ranked by projected return on dollars actually spent <em>by you</em>{" "}
+        (i.e. after seller credits). Cost ranges are NYC retail (licensed GC,
+        permitted work, Brooklyn row-house pricing, mid 2026). Value impact
+        uses comparable Sunset Park / Greenwood / Park Slope sales and current
+        4.5–5% rental cap rates for income items.
       </Text>
 
       <Callout
         tone="success"
-        title="The single highest-ROI move: restore the legal 2-family"
+        title="The single highest-ROI move is still: restore the legal 2-family"
       >
         <Text>
-          Two structural facts from the photos make the separation easier than
-          assumed: (a) the mechanical room already has{" "}
-          <Text weight="semibold">two water heaters</Text>, suggesting the
-          building was previously split unit-by-unit; (b) the ground floor
-          already has its own kitchen, full bath, and a separate front entry.
-          The remaining work is mostly upstairs: add a small kitchen in the
-          family-room area, add a fire-rated unit-entry door at the top of the
-          stair, and sub-meter electric. Sunset Park 1-2 BR floor-throughs rent
-          $3,000–$4,000/mo, ~$25–34k net after expenses. At a 4.75% cap that&apos;s{" "}
+          The inspection actually made this move{" "}
+          <Text weight="semibold">cheaper</Text>, not more expensive. Two new
+          facts confirm it: (a) electrical service is{" "}
+          <Text weight="semibold">3 × 100A</Text> with{" "}
+          <Text weight="semibold">independent 60A sub-panels per floor</Text>{" "}
+          — the building is already physically wired for per-floor metering;
+          (b) the ground floor has its own kitchen, full bath, and separate
+          front entry. Remaining work is mostly upstairs: add a small kitchen
+          in the family-room area, fire-rated unit-entry door at the top of
+          the stair, sub-meter Con Ed, and separate gas/water shutoffs. Sunset
+          Park 1–2 BR floor-throughs rent $3,000–$4,000/mo (~$25–34k net). At
+          a 4.75% cap that's{" "}
           <Text weight="semibold">$530k–$715k of value</Text> on a revised{" "}
-          <Text weight="semibold">$35–60k</Text> separation budget. ROI ~10–18×.
+          <Text weight="semibold">$30–55k</Text> separation budget. ROI ~12–18×.
         </Text>
       </Callout>
 
-      <H3>Projected value impact vs cost (priority initiatives, revised)</H3>
+      <Callout tone="warning" title="The single biggest cost drag is the HVAC failure">
+        <Text>
+          Two of three mini-splits failed at inspection. Even with a generous
+          seller credit ($10–18k is realistic), expect to put another
+          $2–7k of your own money in. This drops the property's overall ROI
+          but is{" "}
+          <Text weight="semibold">also</Text> a leverage point: a
+          documented inspection failure is a clean basis for a price reduction
+          on top of the credit. Don't waive the contingency without resolving
+          this.
+        </Text>
+      </Callout>
+
+      <H3>Projected value impact vs cost (priority initiatives, post-inspection)</H3>
       <BarChart
         categories={[
           "Re-separate 2-family",
-          "Cellar de-risk (de-finish)",
+          "HVAC: replace 2 mini-splits (net of credit)",
+          "Roof replacement (Phase 2)",
+          "Cellar de-risk (paperwork)",
           "Add 3rd bath upstairs",
-          "Cosmetic refresh",
-          "Boiler retire + HP water",
+          "Cosmetic refresh + electrical safety",
           "Backyard / deck",
           "Combine small bedroom",
-          "Rear brick + sewer",
+          "Front entry safety package",
+          "Rear brick + sewer scope",
         ]}
         series={[
           {
             name: "Cost (midpoint, $k)",
-            data: [48, 7, 28, 8, 8, 22, 10, 18],
+            data: [43, 6, 35, 7, 28, 10, 22, 10, 6, 12],
             tone: "warning",
           },
           {
             name: "Projected value add ($k)",
-            data: [620, 27, 45, 30, 15, 30, 25, 12],
+            data: [620, 30, 55, 27, 45, 35, 32, 27, 12, 14],
             tone: "success",
           },
         ]}
-        height={260}
+        height={280}
         valueSuffix="k"
       />
       <Text tone="tertiary" size="small">
-        Midpoint cost vs midpoint projected sale-value add at resale (or
-        capitalized rental income for the 2-family conversion). Excludes any
-        income earned while held.
+        Midpoint cost (net of seller credits on HVAC) vs midpoint projected
+        sale-value add at resale (or capitalized rental income for the
+        2-family conversion). Excludes any income earned while held.
       </Text>
 
-      <H3>Detailed renovation budget &amp; ROI (revised after photo review)</H3>
+      <H3>Detailed renovation budget &amp; ROI (post-inspection)</H3>
       <Table
         headers={[
           "#",
           "Initiative",
-          "Cost range",
+          "Cost (net to you)",
           "Value add",
           "ROI",
           "Notes",
         ]}
         columnAlign={["right", "left", "right", "right", "right", "left"]}
         rowTone={[
+          "success",
           "success",
           "info",
           "info",
@@ -515,161 +800,206 @@ export default function DueDiligence() {
           undefined,
           undefined,
           undefined,
+          undefined,
         ]}
         rows={[
           [
             "1",
-            "Restore legal 2-family (add upstairs kitchen, fire-rated unit door, sub-meter electric, smoke/CO, separate locks; reuse existing 2 water heaters)",
-            "$35–60k",
+            "Restore legal 2-family (add upstairs kitchen, fire-rated unit door, separate Con Ed meters using existing per-floor sub-panels, gas/water sub-shutoffs, smoke/CO, separate locks)",
+            "$30–55k",
             "$530–715k",
-            "~12x",
-            "Cheaper than first quote: existing 2 water heaters and ground-floor kitchen + bath mean less new infra. Verify DOB hasn't lost the 2-family use status when units were combined.",
+            "~14×",
+            "Reduced from prior $35–60k: the inspection confirmed two 60A sub-panels are already one-per-floor, so electrical sub-metering is mostly a meter-pan + utility-coordination job, not a re-wire. Reuse the existing indirect HW tank from the boiler — don't split DHW.",
           ],
           [
             "2",
-            "Cellar paperwork de-risk: back-file ACP for finishes / electrical / mini-split if needed; confirm no second cookline or bedroom claim",
+            "Cellar paperwork de-risk: back-file ACP for finishes / electrical / mini-split; confirm no second cookline or bedroom claim",
             "$3–10k",
             "$15–40k",
-            "~4x",
-            "Risk that the finish work, recessed lighting, and mini-split installation were ever permitted. A small belated filing is usually enough to legalize. Confirm during inspection.",
+            "~4×",
+            "Risk that the finish work, recessed lighting, and mini-split install were ever permitted. A small belated filing usually legalizes. Inspector noted basement finishes prevented assessment of foundation / beams.",
           ],
           [
             "3",
-            "Add a 3rd bathroom upstairs (en-suite half or full off the largest bedroom; or a guest bath off the family room)",
+            "Combine the 80 sf bedroom with adjacent 16×9 to make a true primary suite (or keep '3-bed' label for resale)",
+            "$5–15k",
             "$20–35k",
-            "$35–55k",
-            "~1.6x",
-            "Not strictly required — each unit will have 1 bath after re-separation — but a 3-bed/1-bath upper unit is a soft rental ceiling. Adding a 2nd upstairs bath raises achievable rent ~$300–500/mo. Stack plumbing above existing wet wall.",
+            "~2.5×",
+            "Two of three bedrooms are <100 sf. A true primary scans better in listings. Decide based on hold-vs-sell.",
           ],
           [
             "4",
-            "Cosmetic refresh: repaint purple/red rooms in neutral, refinish ground-floor hardwood, light fixtures, hardware, smart thermostats",
-            "$5–12k",
-            "$20–45k",
-            "~3.5x",
-            "Floors and finishes are already good — this is a $0.20-on-the-dollar lift. Do right before sale, not at purchase.",
+            "Cosmetic refresh + electrical-safety punch list: repaint purple/red rooms neutral, refinish ground-floor floor, light fixtures, smart thermostats, fix sub-panel covers, label all 3 panels, replace failed bath fixture & loud bath fan, cooktop-igniter",
+            "$6–15k",
+            "$25–50k",
+            "~3.5×",
+            "Most of the inspection's small punch list rolls into one pass with a licensed electrician + handyman. Do right before sale, not at purchase — except panel-cover safety items, which are immediate.",
           ],
           [
             "5",
-            "Boiler retire + heat-pump water heater + mechanical-room cleanup, patch ceiling water damage",
-            "$5–12k",
-            "$10–20k",
-            "~1.7x",
-            "Mini-splits cover space heating already. Old boiler likely only doing DHW — replace with hybrid heat-pump water heater (rebate eligible), retire boiler, free up floor area in mech room.",
+            "HVAC: replace 2 failed Fujitsu mini-splits (main + basement) with modern high-SEER units (after applying seller credit)",
+            "$2–7k net",
+            "$20–35k",
+            "~5×",
+            "Gross cost $12–25k. Negotiate $10–18k seller credit based on inspection report; pay the difference out of pocket. Without the credit, ROI is closer to 1.5×. The upstairs unit can run another 5–6 yrs.",
           ],
           [
             "6",
-            "Backyard upgrade: composite deck above existing patio, planters, new fence, low-volt lighting",
-            "$15–30k",
-            "$25–40k",
-            "~1.4x",
-            "Current rear yard is the weakest exterior element (raw fence, gravel, weeds). Brooklyn buyers heavily weight outdoor space.",
+            "Add a 3rd bathroom upstairs (small en-suite off the largest bedroom or a guest 1/2 bath)",
+            "$20–35k",
+            "$35–55k",
+            "~1.6×",
+            "Not strictly required — each unit gets a bath after separation — but raises achievable upper-unit rent ~$300–500/mo. Stack plumbing above existing wet wall.",
           ],
           [
             "7",
-            "Combine the 80 sq ft bedroom with adjacent 16x9 bedroom for a true primary suite",
-            "$5–15k",
-            "$20–35k",
-            "~2.5x",
-            "Two of the three bedrooms are <100 sf. A true primary suite scans better in listings even if you trade '3-bed' for '2-bed + flex'. Or keep current layout and market as 3-bed.",
+            "Roof replacement (Phase 2, yr 2–4): full modified-bitumen / TPO + parapet flashing + add R-49 roof insulation (currently none)",
+            "$28–48k",
+            "$45–70k",
+            "~1.5×",
+            "Current roof rated 'fair' but 14–16 yrs old of an 18–20 yr life. Silver coating is a stopgap. Combine with insulation — eligible for utility rebates. Don't defer past yr 4.",
           ],
           [
             "8",
-            "Rear brick repointing, secure cellar egress window, paint exterior trim at rear",
-            "$5–12k",
-            "$5–15k",
-            "~1.2x",
-            "Front facade is immaculate. Rear brick shows older mortar joints and unfinished pointing.",
+            "Backyard upgrade: composite deck above existing patio, planters, new fence, low-volt lighting",
+            "$15–30k",
+            "$25–40k",
+            "~1.4×",
+            "Rear yard is the weakest exterior element. Brooklyn buyers heavily weight outdoor space.",
           ],
           [
             "9",
-            "Sewer lateral scope + spot repair if needed",
-            "$0.5–15k",
-            "Negative-avoidance",
-            "—",
-            "Insurance against $40–80k emergency. Scope is $400–800 alone; budget for repair only if camera shows defects.",
+            "Front entry safety package: tighten/replace front handrails, regrade/replace settled walkway, seal Bilco basement door, rebuild uneven basement stair risers",
+            "$4–10k",
+            "$8–18k",
+            "~1.5×",
+            "Required for any tenant occupancy + curb appeal at resale. Some items (stairs, walkway) can be seller punch list pre-closing.",
           ],
           [
             "10",
-            "Window restoration / storm windows (optional)",
+            "Rear brick repointing, secure cellar egress window, paint exterior trim at rear",
+            "$5–12k",
             "$8–18k",
-            "$5–15k",
-            "~0.7x",
-            "Photos show original wood double-hungs in front, recently painted black. Restore + storms is cheaper than replace and adds more historic value.",
+            "~1.4×",
+            "Front facade is immaculate. Rear brick shows older mortar.",
+          ],
+          [
+            "11",
+            "Sewer lateral camera scope + spot repair if needed (inspector flagged original mixed-material waste lines)",
+            "$0.5–15k",
+            "Loss-avoidance",
+            "—",
+            "Camera $400–800 alone. Budget for repair only if scope shows defects. Insurance against $40–80k emergency.",
+          ],
+          [
+            "12",
+            "Boiler service contract (NOT replace) + circulator-pump oiling + monitor sump",
+            "$0.3–1k / yr",
+            "Extends life 5–7 yrs",
+            "—",
+            "Boiler is 2013 (12–13 yrs of 18–20) — replacing now would waste 5–7 yrs of useful life. Annual service + run another 5 yrs.",
           ],
         ]}
       />
 
-      <H3>Recommended phased budget</H3>
-      <Grid columns={2} gap={16}>
+      <H3>Recommended phased budget (post-inspection)</H3>
+      <Grid columns={3} gap={16}>
         <Card>
-          <CardHeader>Phase 1 — within 6 months of closing</CardHeader>
+          <CardHeader>Phase 0 — pre-closing (seller's side)</CardHeader>
           <CardBody>
             <Stack gap={4}>
               <Text>
-                Goal: lock in the rental cash flow + de-risk legal exposure.
+                Goal: convert the inspection report into purchase-price
+                concessions. None of this comes out of your construction
+                budget.
               </Text>
-              <Text>· Restore legal 2-family separation</Text>
-              <Text>· Cellar paperwork de-risk (back-file finishes if needed)</Text>
-              <Text>· Add upstairs 3rd bathroom (if renting upper)</Text>
-              <Text>· Boiler retire + heat-pump water heater</Text>
-              <Text>· Sewer scope; sub-meter electric if not done</Text>
-              <Text weight="semibold">Budget: $65–125k</Text>
+              <Text>· Seller credit: 2 failed mini-splits</Text>
+              <Text>· Seller fixes: sub-panel covers + labeling</Text>
+              <Text>· Seller fixes: handrails, walkway, Bilco gap</Text>
+              <Text>· Seller fixes: bath light, bath fan, cooktop igniter</Text>
+              <Text>· Seller resolves open 2003 A2 permit (or escrow)</Text>
+              <Text weight="semibold">Target credit / fixes: $14–28k</Text>
               <Text tone="secondary">
-                Expected outcome: $36–48k/yr gross rent on the non-owner unit,
-                ~$500–700k of added equity at refinance / resale, and the
-                cellar liability removed from any future inspection.
+                Anchor: each inspector-flagged item supports either a punch-list
+                fix-before-closing or a dollar credit. Don't sign off the
+                contingency without it.
               </Text>
             </Stack>
           </CardBody>
         </Card>
         <Card>
-          <CardHeader>Phase 2 — years 1–3</CardHeader>
+          <CardHeader>Phase 1 — within 6 months of closing</CardHeader>
           <CardBody>
             <Stack gap={4}>
-              <Text>Goal: incremental resale lift, raise rent ceiling.</Text>
+              <Text>
+                Goal: lock in rental cash flow + de-risk legal exposure.
+              </Text>
+              <Text>· Restore legal 2-family separation</Text>
+              <Text>· Cellar paperwork de-risk (back-file finishes)</Text>
+              <Text>· Replace 2 failed mini-splits (net of credit)</Text>
+              <Text>· Add upstairs 3rd bathroom (if renting upper)</Text>
+              <Text>· Pre-closing sewer scope; service contract on boiler</Text>
+              <Text weight="semibold">Budget: $55–115k</Text>
+              <Text tone="secondary">
+                Expected outcome: $36–48k/yr gross rent on the non-owner unit,
+                ~$500–700k added equity at refinance / resale, cellar
+                liability removed.
+              </Text>
+            </Stack>
+          </CardBody>
+        </Card>
+        <Card>
+          <CardHeader>Phase 2 — years 2–4</CardHeader>
+          <CardBody>
+            <Stack gap={4}>
+              <Text>Goal: roof + incremental resale lift.</Text>
+              <Text>· Roof replacement + add R-49 roof insulation</Text>
               <Text>· Backyard: composite deck, fence, lighting</Text>
-              <Text>· Combine the 80 sf bedroom into a primary suite</Text>
+              <Text>· Combine 80 sf bedroom into a primary suite</Text>
               <Text>· Cosmetic refresh between rental turns</Text>
               <Text>· Rear brick repointing</Text>
-              <Text weight="semibold">Budget: $30–70k</Text>
+              <Text weight="semibold">Budget: $60–125k</Text>
               <Text tone="secondary">
-                Expected outcome: $50–100k of additional resale lift, premium
-                pricing on a re-listing as a fully legal 2-family.
+                Expected outcome: $80–140k of additional resale lift +
+                $1.5–3k/yr operating cost reduction from new insulation +
+                heat-pump efficiency.
               </Text>
             </Stack>
           </CardBody>
         </Card>
       </Grid>
 
-      <H3>Where the Phase 1 + 2 dollars go (revised)</H3>
+      <H3>Where the Phase 1 + 2 dollars go (post-inspection)</H3>
       <Grid columns={2} gap={16}>
         <PieChart
           donut
           data={[
-            { label: "2-family separation", value: 48, tone: "success" },
+            { label: "2-family separation", value: 43, tone: "success" },
+            { label: "Roof + insulation (Phase 2)", value: 35, tone: "warning" },
             { label: "Add 3rd bath upstairs", value: 28, tone: "info" },
             { label: "Backyard / deck", value: 22 },
+            { label: "Rear brick + sewer", value: 12 },
+            { label: "Cosmetic + electrical safety", value: 10 },
             { label: "Combine bedroom", value: 10 },
-            { label: "Cosmetic refresh", value: 8 },
-            { label: "Boiler + HP water", value: 8, tone: "warning" },
             { label: "Cellar paperwork", value: 7 },
-            { label: "Rear brick + sewer", value: 18 },
+            { label: "HVAC (net of seller credit)", value: 6, tone: "danger" },
+            { label: "Front entry safety", value: 6 },
           ]}
           size={240}
         />
         <Stack gap={6}>
-          <Text weight="semibold">Total Phase 1 + 2 budget: $100–190k</Text>
+          <Text weight="semibold">Total Phase 1 + 2 budget: $115–240k</Text>
           <Text tone="secondary">
-            Down from the $140–235k pre-photo estimate. The property is
-            substantially more turn-key than the listing language suggested —
-            but the 3rd bathroom and 2-family separation are still the two
-            biggest line items.
+            Up from the prior $100–190k post-photo estimate. The increase is{" "}
+            <Text weight="semibold">entirely</Text> the new roof + insulation
+            line (Phase 2) plus the net HVAC cost. Phase 1 alone is actually
+            $10–10k lighter than before because the boiler / HW retirement is
+            no longer needed and the 2-family separation got cheaper.
           </Text>
           <Text>
             <Text weight="semibold">Projected post-renovation value:</Text>{" "}
-            $1.8–2.0M (vs $1.275M purchase) once re-listed as a fully legal,
-            unit-separated 2-family.
+            $1.85–2.10M (vs $1.275M purchase) once re-listed as a fully legal,
+            unit-separated 2-family with a new roof.
           </Text>
           <Text>
             <Text weight="semibold">Cash-on-cash from rental:</Text> $25–34k
@@ -677,7 +1007,16 @@ export default function DueDiligence() {
           </Text>
           <Text>
             <Text weight="semibold">Holding cost reduction:</Text> $1.5–3k/yr
-            from heat-pump water heater + boiler retire.
+            from new mini-splits + roof insulation. The boiler + HW retire
+            play is OFF the table — both units have 5+ yrs of useful life.
+          </Text>
+          <Text>
+            <Text weight="semibold">Inspection-driven cost net to buyer:</Text>{" "}
+            roughly <Text weight="semibold">flat</Text> on Phase 1 (lower
+            separation cost offsets HVAC net) and{" "}
+            <Text weight="semibold">+$30–45k</Text> on Phase 2 (new roof) —
+            but Phase 2 roof was always a 'when' not 'if', and now it has a
+            firm date.
           </Text>
         </Stack>
       </Grid>
@@ -689,13 +1028,13 @@ export default function DueDiligence() {
         rows={[
           [
             "Cellar (rec + studio + cosmetic bar)",
-            "Recessed lighting, LVP flooring, sound-treated music studio, pool table, gym, mini-split, plus a cosmetic-only bar (no plumbing). Fully finished.",
-            "Moderate risk. No plumbed bar means no illegal-apartment evidence. Remaining concern is whether finish work (electrical, partitions, recessed lighting, mini-split install) was permitted. Cheap belated filing if not.",
+            "Recessed lighting, LVP flooring, sound-treated music studio, pool table, gym, mini-split (FAILED at inspection — see HVAC findings), plus a cosmetic-only bar (no plumbing). Fully finished. Inspector noted finishes prevented full assessment of foundation walls / beams / slab.",
+            "Moderate risk. No plumbed bar = no illegal-apartment evidence. Remaining concern is whether finish work (electrical, partitions, recessed lighting, mini-split install) was permitted. Cheap belated ACP filing if not. Mini-split must be replaced or repaired with credit.",
           ],
           [
-            "Mechanical room",
-            "Old beige boiler (likely 1990s), TWO water heaters (1 white tank, 1 blue smaller tank), heavy copper repipe, ceiling water-damaged above mech, washer/dryer.",
-            "Boiler retire + heat-pump WH = $5–10k and 30–60% opex cut. Two water heaters suggests the building was previously split unit-by-unit — confirms the 2-family separation is cheap to restore. Patch ceiling leak source.",
+            "Mechanical room (corrected per inspection)",
+            "Weil McLain gas boiler (MFG 02/2013, 12–13 yrs, fair). ONE 50-gal Burnham indirect HW tank (MFG 05/2019, 6–7 yrs, fair) heated by the boiler — not two separate heaters as the photo first suggested. Copper repipe visible. Some ceiling water-staining above mech. Washer/dryer present.",
+            "Major correction: don't retire the boiler — it has 5–7 yrs of useful life left. Don't replace the HW tank — it's 2019. Service contract only ($300–500/yr) and patch the ceiling leak source. Saves $5–10k vs the prior plan.",
           ],
           [
             "Kitchen (ground floor)",
@@ -742,7 +1081,7 @@ export default function DueDiligence() {
 
       <Callout
         tone="info"
-        title="Pricing methodology and caveats"
+        title="Pricing methodology and caveats (updated with inspection data)"
       >
         <Stack gap={4}>
           <Text>
@@ -757,16 +1096,26 @@ export default function DueDiligence() {
             improvements.
           </Text>
           <Text>
+            · &quot;Net to you&quot; HVAC cost assumes a $10–18k seller credit
+            for the two failed mini-splits. If the seller refuses, gross cost
+            $12–25k applies and the line drops to ~1.5× ROI — but you also
+            have a documented basis for a same-magnitude price reduction.
+          </Text>
+          <Text>
             · Numbers assume the Tier 1 due-diligence items above (open permit,
             no C of O, prior WWP violations) are cured before any work begins;
             otherwise expect 20–40% cost overrun from legalization back-charges.
           </Text>
           <Text>
-            · Cellar finishing risk is moderate, not catastrophic. With no
-            plumbed bar / kitchen there&apos;s no illegal-apartment exposure.
-            Worst case is a belated ACP filing for finishes / electrical /
-            mini-split — typically $3–10k. Still negotiate seller responsibility
-            into the contract.
+            · Cellar finishing risk remains moderate, not catastrophic. The
+            inspection couldn't assess foundation walls behind the LVP +
+            drywall, so the back-filing of finish work is still the right
+            mitigation. Worst case is a belated ACP filing — typically $3–10k.
+          </Text>
+          <Text>
+            · Roof line is new in this version: inspection clocks the
+            existing rolled-rubber roof at 14–16 yrs of an 18–20 yr design
+            life. Plan, don't panic — but don't defer past yr 4.
           </Text>
         </Stack>
       </Callout>
@@ -837,41 +1186,62 @@ export default function DueDiligence() {
 
       <Divider />
 
-      <H2>Questions to put to the seller in writing</H2>
+      <H2>Questions to put to the seller in writing (post-inspection)</H2>
       <Stack gap={4}>
         <Text>
-          1. Provide the DOB sign-off and final inspection paperwork for Job
+          1. <Text weight="semibold">(New from inspection)</Text> Provide a
+          repair-or-credit response for each &quot;Repair or Replace&quot;
+          item in the Massive Inspection report dated 5/20/2026 — specifically
+          the two failed mini-splits, the upper-floor sub-panel cover, the
+          main-level sub-panel open slot, front handrails, walkway, Bilco
+          gap, basement stair risers, upper-bath light, main-bath fan, and
+          kitchen cooktop igniter.
+        </Text>
+        <Text>
+          2. <Text weight="semibold">(New from inspection)</Text> Disclose
+          the source of the ceiling water-staining above the mechanical room
+          and confirm whether any plumbing leak has been repaired.
+        </Text>
+        <Text>
+          3. <Text weight="semibold">(New from inspection)</Text> Provide
+          ACP-5 / ACP-7 filings or sworn statements confirming the cellar
+          finish work (LVP, recessed lighting, partition walls, mini-split
+          install) was performed with appropriate permits or qualifies as
+          ordinary repair.
+        </Text>
+        <Text>
+          4. Provide the DOB sign-off and final inspection paperwork for Job
           301532535. If unavailable, agree in the contract to close out the
           permit and bear the cost.
         </Text>
         <Text>
-          2. Confirm in writing that no work has been performed on the building
+          5. Confirm in writing that no work has been performed on the building
           since the 2003 A2 permit other than ordinary repairs not requiring a
           permit; list any exceptions.
         </Text>
         <Text>
-          3. Provide a sworn statement regarding any underground or aboveground
+          6. Provide a sworn statement regarding any underground or aboveground
           oil tank: presence, location, removal date, NYSDEC paperwork.
         </Text>
         <Text>
-          4. Provide the lead paint disclosure (federal Title X) and any prior
+          7. Provide the lead paint disclosure (federal Title X) and any prior
           XRF or risk assessment.
         </Text>
         <Text>
-          5. Confirm in writing that the building has only two dwelling units
+          8. Confirm in writing that the building has only two dwelling units
           and the cellar is not used or rented as a separate dwelling.
         </Text>
         <Text>
-          6. Provide last three years of water/sewer bills and Con Ed bills
+          9. Provide last three years of water/sewer bills and Con Ed bills
           (electric and gas) per unit — useful for inspector cross-checks and
           to spot a hidden third meter.
         </Text>
         <Text>
-          7. Disclose any flooding, sewer back-up, mold remediation, or
+          10. Disclose any flooding, sewer back-up, mold remediation, or
           structural repair within the last 10 years.
         </Text>
         <Text>
-          8. Provide proof of any homeowner&apos;s insurance claims filed at
+          11. Provide proof of any homeowner&apos;s insurance claims filed at
           the property.
         </Text>
       </Stack>
