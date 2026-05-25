@@ -1,6 +1,6 @@
 # 242 45th St — Due Diligence
 
-Interactive due-diligence report for **242 45th St, Brooklyn, NY 11220** (inspection checklist, BIS records, renovation priorities).
+Interactive due-diligence report for **** (inspection checklist, BIS records, renovation priorities).
 
 Built from a [Cursor Canvas](https://cursor.com/docs/agent/tools/canvas) and deployed as a static site.
 
