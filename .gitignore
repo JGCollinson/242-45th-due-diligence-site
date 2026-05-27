@@ -3,3 +3,6 @@ dist
 assets
 .DS_Store
 *.local
+tmp-pages/
+tmp-contract/
+tmp-k-proposed.pdf

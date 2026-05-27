@@ -26,10 +26,21 @@ export default function DueDiligence() {
         <H1>242 45th St, Brooklyn — Inspection Due Diligence</H1>
         <Text tone="secondary">
           Sunset Park, Community Board 7 · Block 745, Lot 26 · BIN 3011473 · DOF
-          class B9 (2-family dwelling) · Sources: NYC DOB BIS (Property Profile,
-          Jobs, OATH/ECB, Actions, C of O), Google Maps.
+          tax class 1 (small home, fewer than 4 families) · Sources: NYC DOB
+          BIS, inspection report (5/20/2026), proposed contract of sale +
+          riders (K – Proposed, May 2026), DG deal sheet (5/19/2026), 2014
+          deed (Marinovich acquisition), DOF Q3 2026 RE tax bill,
+          Collinson closing-costs worksheet, Randy Chang engagement letter.
         </Text>
       </Stack>
+
+      <Grid columns={5} gap={12}>
+        <Stat value="$1.25M" label="Contract price (proposed)" tone="success" />
+        <Stat value="$125k" label="Downpayment (10%) in escrow" />
+        <Stat value="$1.0M" label="Target mortgage (80% LTV per worksheet)" />
+        <Stat value="~$130k" label="Additional cash to close (est.)" tone="warning" />
+        <Stat value="45 / 60 days" label="Mortgage commitment / closing" tone="info" />
+      </Grid>
 
       <Grid columns={5} gap={12}>
         <Stat value="0" label="Certificates of Occupancy on file" tone="warning" />
@@ -41,7 +52,7 @@ export default function DueDiligence() {
 
       <Callout
         tone="danger"
-        title="Top four things to resolve before you remove the inspection contingency"
+        title="Top five things to resolve before you sign or waive contingencies"
       >
         <Stack gap={6}>
           <Text>
@@ -84,6 +95,19 @@ export default function DueDiligence() {
             The inspector also noted the basement is fully finished with
             recessed lighting, mini-split, partitions, and LVP — confirm none
             of that was permitted, and back-file if needed.
+          </Text>
+          <Text>
+            <Text weight="semibold">
+              5. Contract Rider R-28 lets the seller cancel if CO / permit
+              sign-offs aren&apos;t issued.
+            </Text>{" "}
+            The proposed contract gives Matt Marinovich an out — return your
+            deposit — if required certificates of occupancy or permit sign-offs
+            for alterations are not on file at closing. With an open 2003 A2
+            permit and no C of O, this is a seller escape hatch, not buyer
+            protection. Negotiate a pre-closing obligation to close Job
+            301532535 and deliver a 2-family CO or LNO before you bind, or
+            amend R-28 so the seller must cure, not cancel.
           </Text>
         </Stack>
       </Callout>
@@ -578,18 +602,561 @@ export default function DueDiligence() {
 
       <Divider />
 
+      <H2>Proposed contract of sale — May 2026</H2>
+      <Text tone="secondary">
+        NYSBA Residential Contract of Sale + Rider + Second Rider, as proposed
+        between seller Matt P. Marinovich and purchasers Josef &amp; Samantha
+        Collinson. Purchaser&apos;s counsel: Law Office of Randy Chang, PLLC.
+        Seller&apos;s counsel / escrow: Michael J. Ficchi, Esq. (Chase Bank,
+        444 5th Ave, Brooklyn).
+      </Text>
+
+      <Grid columns={4} gap={12}>
+        <Stat value="$1.25M" label="Purchase price" tone="success" />
+        <Stat value="$25k" label="Below list ($1.275M)" tone="success" />
+        <Stat value="$1.125M" label="Balance at closing" />
+        <Stat value="$500" label="PCDS waiver credit at closing" tone="info" />
+      </Grid>
+
+      <Callout
+        tone="warning"
+        title="Contract is heavily seller-protective — inspection findings must be negotiated before signing"
+      >
+        <Stack gap={6}>
+          <Text>
+            <Text weight="semibold">No home-inspection contingency.</Text>{" "}
+            The contract is &quot;as is&quot; (§12, Rider R-19, R-37). You
+            waived the Property Condition Disclosure Act and lead-paint inspection
+            opportunity. The only $500 credit at closing reimburses inspection
+            cost — it is not a repair credit. Termite inspection must be
+            completed and notice served within 10 days of contract date (R-22).
+          </Text>
+          <Text>
+            <Text weight="semibold">§10(a) governmental violations — deleted.</Text>{" "}
+            Seller is not contractually required to clear DOB, HPD, or ECB
+            violations before closing. Rider R-14 caps seller violation
+            remediation at $500; above that, seller can refuse and you take title
+            as-is or cancel.
+          </Text>
+          <Text>
+            <Text weight="semibold">R-28 CO / permit escape hatch.</Text>{" "}
+            If required CO or permit sign-offs are missing, seller may cancel
+            and return deposit — critical given open Job 301532535 and no C of
+            O on file.
+          </Text>
+          <Text>
+            <Text weight="semibold">Partial buyer protection in R-21.</Text>{" "}
+            Despite §16(e) being struck out, Rider R-21 requires plumbing,
+            heating, electrical systems, and a leak-free roof at closing. Two
+            failed mini-splits and sub-panel hazards are leverage under R-21
+            — insist on repair or closing credit before deed acceptance (R-29
+            discharges seller once you accept the deed).
+          </Text>
+          <Text>
+            <Text weight="semibold">Second Rider — removed upstairs kitchen.</Text>{" "}
+            Seller discloses the top-floor kitchen was removed when the room
+            was converted to a master bedroom; plumbing remains concealed
+            behind sheetrock. Contract gives you deposit refund if lender denies
+            commitment solely because of the removed kitchen — relevant to your
+            2-family restoration plan and appraisal.
+          </Text>
+        </Stack>
+      </Callout>
+
+      <H3>Contract terms snapshot</H3>
+      <Table
+        headers={["Term", "Contract language", "Due-diligence implication"]}
+        rows={[
+          [
+            "Parties",
+            "Seller: Matt P. Marinovich · Purchasers: Josef & Samantha Collinson",
+            "Contract matches inspection report addressee (Collinson).",
+          ],
+          [
+            "Price / deposit",
+            "$1,250,000 · $125,000 down (10%) in escrow · $1,125,000 at closing",
+            "$25k below Redfin list. 10% deposit at risk if you default.",
+          ],
+          [
+            "Financing",
+            "Contract §8: $900,000 mortgage / 45-day commitment / 30-yr min · Closing-costs worksheet & DG deal sheet: $1,000,000 (80% LTV) target",
+            "Reconcile before signing: contract floor is $900k, worksheet plans $1M. Lender must be comfortable with 2-family, IBZ, no C of O, open permit, removed kitchen.",
+          ],
+          [
+            "Closing",
+            "On or about 60 days from fully executed contract · 10 AM · Ficchi office, 706 5th Ave, Brooklyn",
+            "~late July 2026 if signed late May. Attorneys may extend dates (R-30).",
+          ],
+          [
+            "Possession",
+            "Vacant, broom-clean, entire premises within 7 days of closing · $1,000 escrow · $75/day holdover penalty",
+            "Not same-day vacant — plan 7-day post-closing buffer before tenant work.",
+          ],
+          [
+            "Property type",
+            "R-5 + Second Rider: legal two-family dwelling",
+            "Aligns with DOF B9 class and your ROI thesis — but CO/permit gap remains.",
+          ],
+          [
+            "Seller reps",
+            "Not in mortgage default · no foreclosure · taxes current through next lien date (R-34)",
+            "Positive — reduces title/financial distress risk.",
+          ],
+          [
+            "PCDS / disclosures",
+            "R-37: Article 14 waived · caveat emptor · $500 credit at closing",
+            "No seller disclosure of condition. All discovery is on you.",
+          ],
+          [
+            "Working systems",
+            "§16(e) struck out · R-21 restores plumbing/heat/electric + leak-free roof at closing",
+            "Primary contractual hook for HVAC credit/repair before closing.",
+          ],
+          [
+            "Violations / permits",
+            "§10(a) deleted · R-14 cap $500 · R-28 seller cancel if no CO/sign-offs · R-10 AC/antenna violations pass through",
+            "Worst clauses for this specific building. Must amend or cure pre-sign.",
+          ],
+          [
+            "Lead paint",
+            "Seller: no knowledge · Purchaser waived 10-day inspection opportunity",
+            "Pre-1960 building — assume lead present; you gave up statutory inspection window.",
+          ],
+          [
+            "Brokers",
+            "Daniel Gale-Sotheby's + Redfin · seller pays commission (§27)",
+            "Standard.",
+          ],
+        ]}
+      />
+
+      <Divider />
+
+      <H2>Closing-cost estimate — cash to close</H2>
+      <Text tone="secondary">
+        Source: Collinson closing-costs worksheet + standard NYC charges
+        (mortgage tax, mansion tax, title insurance). All numbers are
+        estimates and exclude adjustments and Day-1 reserves.
+      </Text>
+
+      <Grid columns={4} gap={12}>
+        <Stat value="$1.25M" label="Purchase price" />
+        <Stat value="~$995k" label="Net loan proceeds (after bank fees)" tone="info" />
+        <Stat value="~$130k" label="Additional cash beyond deposit" tone="warning" />
+        <Stat value="$255k" label="Approx total cash out-of-pocket" tone="warning" />
+      </Grid>
+
+      <H3>Estimated buyer closing costs</H3>
+      <Table
+        headers={["Item", "Amount", "Notes"]}
+        columnAlign={["left", "right", "left"]}
+        rows={[
+          [
+            "Mortgage recording tax (NY 1.925% on $1M)",
+            "$19,220",
+            "NYC residential mortgage tax (~1.925% over $500k); buyer pays.",
+          ],
+          [
+            "Mansion tax (1% of price $1M+)",
+            "$12,500",
+            "Triggered because purchase price ≥ $1M residential. No escape.",
+          ],
+          [
+            "Title — owner's policy premium",
+            "$5,151",
+            "Insures your title against unknown claims; required for cash buyers, recommended always.",
+          ],
+          [
+            "Title — loan policy premium",
+            "$1,073",
+            "Required by lender on the $1M loan.",
+          ],
+          [
+            "Title search / production",
+            "~$750",
+            "Includes municipal search; needed to surface judgments and liens.",
+          ],
+          [
+            "Recording / filing fees",
+            "~$750",
+            "Deed + mortgage recording at ACRIS.",
+          ],
+          [
+            "Survey",
+            "~$900",
+            "Required by lender; confirms boundaries and party-wall encroachments (relevant given Rider R-38 out-of-possession clause).",
+          ],
+          [
+            "Title closer",
+            "$250",
+            "Attendance fee at closing.",
+          ],
+          [
+            "Bank fees (origination, appraisal, escrow, etc.)",
+            "~$5,000",
+            "Per worksheet — confirm with lender's Loan Estimate.",
+          ],
+          [
+            "Buyer attorney (Randy Chang)",
+            "$3,000",
+            "Flat fee per engagement letter; covers contract, due diligence, title, loan, closing. Excludes tax/FIRPTA/litigation.",
+          ],
+          [
+            "Homeowners insurance (Year 1)",
+            "$2,500–4,500",
+            "Worksheet line blank. Bind a policy with replacement-cost on the row-house + landlord rider once unit 2 is restored.",
+          ],
+          [
+            "PCDS waiver credit (from seller)",
+            "−$500",
+            "Per Rider R-37 — partially offsets your inspection cost.",
+          ],
+        ]}
+      />
+
+      <Callout
+        tone="warning"
+        title="$1.25M crosses the mansion-tax line — a $1,000,000 contract would save $12,500"
+      >
+        <Text>
+          The $12,500 mansion tax kicks in at exactly $1,000,000.01. Every
+          dollar between $1M and $1.25M costs you 1% (i.e., you don&apos;t
+          avoid the tax by getting close — you have to break $1M). If a
+          re-trade or seller credit gets the price to or below $1,000,000, the
+          mansion tax goes to zero. Above $1M, that&apos;s a known $12,500
+          cost — factor it into any post-inspection price negotiation.
+        </Text>
+      </Callout>
+
+      <H3>Estimated cash to close (illustrative)</H3>
+      <Grid columns={2} gap={16}>
+        <Card>
+          <CardHeader>Sources</CardHeader>
+          <CardBody style={{ padding: 0 }}>
+            <Table
+              framed={false}
+              headers={["Source", "Amount"]}
+              columnAlign={["left", "right"]}
+              rows={[
+                ["Deposit (already in escrow)", "$125,000"],
+                ["Net loan proceeds (after $5k bank fees)", "$995,000"],
+                ["Additional buyer cash at closing", "$130,000"],
+                ["Total sources", "$1,250,000"],
+              ]}
+              rowTone={[undefined, undefined, undefined, "info"]}
+            />
+          </CardBody>
+        </Card>
+        <Card>
+          <CardHeader>Uses</CardHeader>
+          <CardBody style={{ padding: 0 }}>
+            <Table
+              framed={false}
+              headers={["Use", "Amount"]}
+              columnAlign={["left", "right"]}
+              rows={[
+                ["Pay seller (purchase price)", "$1,250,000"],
+                ["Plus buyer closing costs (mortgage + mansion + title + survey + attorney + insurance)", "~$46–48k"],
+                ["Approx total cash out-of-pocket (deposit + add'l cash + closing costs)", "~$255k"],
+                ["Reserve for HVAC + safety repairs post-credits", "$5–15k"],
+                ["Total uses (worst case)", "~$270k"],
+              ]}
+              rowTone={[undefined, undefined, "info", "warning", "danger"]}
+            />
+          </CardBody>
+        </Card>
+      </Grid>
+
+      <Text tone="tertiary" size="small">
+        Mansion tax ($12.5k) and mortgage recording tax ($19.2k) together are
+        $31,700 — about 2.5% of the purchase price — and dwarf every other
+        buyer-side closing line. Both are unavoidable at this contract price.
+      </Text>
+
+      <Divider />
+
+      <H2>Seller acquisition history (deed)</H2>
+      <Text tone="secondary">
+        Source: NYC ACRIS deed CRFN 2014000322083, recorded 09/30/2014.
+        Establishes seller&apos;s 2014 cost basis and the building&apos;s
+        long-term price trajectory.
+      </Text>
+
+      <Grid columns={4} gap={12}>
+        <Stat value="$695k" label="Marinovich 2014 purchase (back-solved from transfer tax)" tone="info" />
+        <Stat value="$1.25M" label="2026 contract price" tone="success" />
+        <Stat value="+80%" label="Total appreciation 2014–2026" tone="success" />
+        <Stat value="~5.0% / yr" label="Compounded annual price growth" />
+      </Grid>
+
+      <H3>Title chain</H3>
+      <Table
+        headers={["Date", "Grantor", "Grantee", "Doc / CRFN", "Inferred price"]}
+        rows={[
+          [
+            "01/09/2004 (recorded 03/04/2004)",
+            "Juliet Gittens & Kwhame Gittens",
+            "Xing Long Chen & Chang Qing Zheng (husband & wife)",
+            "CRFN 2004000132507",
+            "—",
+          ],
+          [
+            "09/17/2014 (recorded 09/30/2014)",
+            "Xing Long Chen & Chang Qing Zheng",
+            "Matt P. Marinovich",
+            "CRFN 2014000322083 · Doc 2014091701074001",
+            "~$695,000 (NYC RPTT $9,903.75 + NYS RETT $2,780 imply $695k)",
+          ],
+          [
+            "May 2026 (proposed)",
+            "Matt P. Marinovich",
+            "Josef & Samantha Collinson",
+            "K – Proposed",
+            "$1,250,000",
+          ],
+        ]}
+      />
+
+      <Callout
+        tone="info"
+        title="Seller has substantial untaxed gain — supports your case for credits"
+      >
+        <Text>
+          Marinovich paid roughly $695k in 2014. At $1.25M he books a{" "}
+          <Text weight="semibold">~$555k gross gain</Text> before commission
+          (~$62,500 at 5%), NY/NYC transfer tax (~$16k), and his own attorney.
+          Net of capital gains (long-term federal + NYS, with $250k single /
+          $500k joint primary-residence exclusion if eligible), this is still
+          a meaningful win. He can almost certainly absorb a $14–28k credit
+          for inspection items without putting the deal at risk —{" "}
+          <Text weight="semibold">use this when negotiating</Text>.
+        </Text>
+      </Callout>
+
+      <Divider />
+
+      <H2>Property tax detail (DOF)</H2>
+      <Text tone="secondary">
+        Source: NYC DOF Q3-26 quarterly statement (activity through 2/21/2026,
+        due 4/1/2026).
+      </Text>
+
+      <Grid columns={4} gap={12}>
+        <Stat value="$3,696.96" label="Annual property tax (FY26)" tone="success" />
+        <Stat value="$912.97" label="Quarterly bill (due 4/1/26)" />
+        <Stat value="$1,138,000" label="DOF estimated market value" />
+        <Stat value="19.843%" label="Class 1 tax rate × billable assessed" tone="info" />
+      </Grid>
+
+      <Table
+        headers={["Detail", "Value", "Implication"]}
+        rows={[
+          [
+            "Tax class",
+            "1 — small home, fewer than 4 families",
+            "Class 1 assessment caps (6% / yr, 20% / 5 yr) protect against rapid tax growth even after market appreciation.",
+          ],
+          [
+            "DOF market value",
+            "$1,138,000",
+            "$112k below the $1.25M contract price — DOF will not chase your purchase price; assessment grows on caps, not on sale.",
+          ],
+          [
+            "Billable assessed value",
+            "$18,631",
+            "Effective rate ~0.30% of contract price — among the lowest in NYC class 1 stock; durable cash-flow advantage for a 2-family.",
+          ],
+          [
+            "Adopted tax rate adjustment",
+            "−$22.54 (1/1/26 reconciliation)",
+            "Routine FY26 rate true-up; current rate is 19.843%.",
+          ],
+          [
+            "Outstanding charges",
+            "$0.00",
+            "Seller is current — aligns with Rider R-34 representation. Confirm at closing.",
+          ],
+          [
+            "STAR / SCHE / DHE",
+            "Not visible on bill",
+            "Marinovich appears to not claim STAR; verify before assuming you can re-enroll as primary residence.",
+          ],
+        ]}
+      />
+
+      <Divider />
+
+      <H2>Deal sheet vs contract — clean-up items</H2>
+      <Text tone="secondary">
+        Source: Daniel Gale-Sotheby&apos;s deal sheet dated 5/19/2026 vs the
+        proposed K – Proposed contract.
+      </Text>
+      <Table
+        headers={["Field", "Deal sheet", "Contract / worksheet", "Action"]}
+        rows={[
+          [
+            "Price",
+            "$1,250,000",
+            "$1,250,000",
+            "Match.",
+          ],
+          [
+            "Deposit",
+            "10% ($125,000)",
+            "$125,000 (§3)",
+            "Match.",
+          ],
+          [
+            "Financing",
+            "80% mortgage",
+            "$900,000 minimum (§8); worksheet plans $1,000,000",
+            "Have Randy Chang amend §8 to $1,000,000 commitment so the contingency matches your actual loan, or formally accept the $900k floor.",
+          ],
+          [
+            "Mortgage contingency",
+            "45 days (listed under \"Contingency\")",
+            "§8: 45 days from fully-executed contract",
+            "Match.",
+          ],
+          [
+            "Estimated closing",
+            "45 days (deal sheet)",
+            "60 days (§15)",
+            "Contract controls. Plan around §15 60-day clock.",
+          ],
+          [
+            "RE Taxes",
+            "$3,697",
+            "$3,696.96 (DOF FY26)",
+            "Match.",
+          ],
+          [
+            "Brokers",
+            "Daniel Gale 2.5% + Redfin 2.5% (seller pays)",
+            "§27: seller pays both",
+            "Match.",
+          ],
+          [
+            "Buyer address listed",
+            "242 45th St, Brooklyn, NY 11220",
+            "Blank on contract page 1",
+            "Cosmetic — fill in your current address before signing.",
+          ],
+          [
+            "Inspection",
+            "Scheduled 5/20/26 (already complete)",
+            "No contingency in K (R-37 PCDS waiver)",
+            "Your leverage is pre-signing only. Use inspection findings to negotiate now.",
+          ],
+        ]}
+      />
+
+      <Divider />
+
+      <H2>Attorney engagement (Randy Chang, PLLC)</H2>
+      <Text tone="secondary">
+        Source: engagement letter (revised), Law Office of Randy Chang.
+      </Text>
+      <Table
+        headers={["Term", "Detail", "Note"]}
+        rows={[
+          [
+            "Attorneys assigned",
+            "Randy Chang / Colin McGeough",
+            "McGeough is your primary point of contact on this file.",
+          ],
+          [
+            "Scope",
+            "Contract negotiation/review, due diligence review, title review, loan documents, closing attendance",
+            "Standard purchaser representation.",
+          ],
+          [
+            "Excluded",
+            "Tax / 1031 / FIRPTA / capital gains, bankruptcy, business mgmt, any non-legal matter, litigation",
+            "You will need a separate CPA for the tax-credit + house-hack income side of the 2-family thesis.",
+          ],
+          [
+            "Flat fee",
+            "Per closing-costs worksheet: $3,000 (engagement letter blank)",
+            "Confirm $3,000 in writing before signing the engagement.",
+          ],
+          [
+            "Early termination",
+            "1/3 of flat fee if you terminate before fully-executed contract",
+            "About $1,000 if you walk pre-signing — cheap insurance to use the contract leverage now.",
+          ],
+          [
+            "Additional fees (examples)",
+            "Power of attorney +$250, amendment after full execution +$450, corporate resolution +$350, lease review +$750/lease",
+            "If you bring on a tenant for unit 2 before closing or amend the K post-signing, budget for these.",
+          ],
+          [
+            "Title authorization",
+            "Firm orders lien/title search from a reputable NYS title insurer",
+            "Pre-authorized — if you want a specific title company, tell them now.",
+          ],
+          [
+            "Joint clients",
+            "No expectation of confidentiality between you and Samantha — firm represents you jointly",
+            "Standard for spouses; just be aware.",
+          ],
+        ]}
+      />
+
+      <Divider />
+
+      <H3>Contract vs inspection — negotiation map</H3>
+      <Table
+        headers={["Inspection finding", "Contract leverage", "Recommended ask"]}
+        rowTone={["danger", "warning", "warning", "warning", undefined, undefined]}
+        rows={[
+          [
+            "2 of 3 mini-splits failed ($12–25k)",
+            "R-21: heating/AC must work at closing",
+            "Seller repair or $12–18k closing credit before deed (R-29 merger)",
+          ],
+          [
+            "Sub-panel cover + open slot ($1–2k)",
+            "R-21: electrical in working order",
+            "Licensed electrician repair pre-closing — safety, not deferrable",
+          ],
+          [
+            "Open 2003 A2 permit + no C of O",
+            "§16(b) CO required · R-28 seller cancel if missing",
+            "Amend R-28: seller must close permit + deliver LNO/CO, not cancel option",
+          ],
+          [
+            "Front handrails, walkway, Bilco, stairs ($4–10k)",
+            "§12 as-is · no inspection contingency",
+            "Closing credit or pre-closing punch list — no automatic contract right",
+          ],
+          [
+            "Roof 14–16 yrs, fair, no active leaks",
+            "R-21: roof free of leaks at closing",
+            "Acceptable today — document condition at final walk-through",
+          ],
+          [
+            "Removed upstairs kitchen (Second Rider)",
+            "Deposit refund if lender denies for kitchen removal only",
+            "Confirm lender/appraiser OK with 2-family re-separation plan before commitment",
+          ],
+        ]}
+      />
+
+      <Divider />
+
       <H2>Listing snapshot (Redfin)</H2>
       <Grid columns={4} gap={12}>
-        <Stat value="$1.275M" label="List price" />
+        <Stat value="$1.275M" label="Original list price" />
+        <Stat value="$1.25M" label="Proposed contract price" tone="success" />
         <Stat value="3 / 2" label="Bed / Bath" />
-        <Stat value="2" label="Legal units (used as 1)" tone="info" />
         <Stat value="$3,696" label="Annual taxes" tone="success" />
       </Grid>
       <Text tone="secondary">
         17.33 x 100.17 ft lot · 2 stories above grade (~1,500 sf) + finished
         basement (~575 sf) · legal 2-family being sold as a single · MLS
         RLS20079085 · brick row-house with intact original cornice and
-        brownstone window trim · ~$580 / sf inclusive of basement.
+        brownstone window trim · ~$570 / sf at contract price (inclusive of basement).
       </Text>
 
       <Divider />
@@ -904,24 +1471,24 @@ export default function DueDiligence() {
       <H3>Recommended phased budget (post-inspection)</H3>
       <Grid columns={3} gap={16}>
         <Card>
-          <CardHeader>Phase 0 — pre-closing (seller's side)</CardHeader>
+          <CardHeader>Phase 0 — pre-signing / pre-closing (contract leverage)</CardHeader>
           <CardBody>
             <Stack gap={4}>
               <Text>
-                Goal: convert the inspection report into purchase-price
-                concessions. None of this comes out of your construction
-                budget.
+                Goal: amend the proposed contract and convert inspection
+                findings into binding closing conditions. The draft contract
+                has no inspection contingency — only R-21 working-systems
+                language and a $500 PCDS credit.
               </Text>
-              <Text>· Seller credit: 2 failed mini-splits</Text>
-              <Text>· Seller fixes: sub-panel covers + labeling</Text>
-              <Text>· Seller fixes: handrails, walkway, Bilco gap</Text>
-              <Text>· Seller fixes: bath light, bath fan, cooktop igniter</Text>
-              <Text>· Seller resolves open 2003 A2 permit (or escrow)</Text>
-              <Text weight="semibold">Target credit / fixes: $14–28k</Text>
+              <Text>· Amend R-28: seller must cure open permit + CO/LNO</Text>
+              <Text>· R-21 repair or credit: 2 failed mini-splits</Text>
+              <Text>· R-21 repair: sub-panel covers + labeling</Text>
+              <Text>· Negotiate punch list: handrails, walkway, Bilco gap</Text>
+              <Text>· Confirm lender OK with removed kitchen (Second Rider)</Text>
+              <Text weight="semibold">Target concessions: $14–28k credit + permit cure</Text>
               <Text tone="secondary">
-                Anchor: each inspector-flagged item supports either a punch-list
-                fix-before-closing or a dollar credit. Don't sign off the
-                contingency without it.
+                Without contract amendments, post-signing you rely on R-21 at
+                closing only — and R-29 discharges seller upon deed acceptance.
               </Text>
             </Stack>
           </CardBody>
@@ -997,7 +1564,7 @@ export default function DueDiligence() {
           </Text>
           <Text>
             <Text weight="semibold">Projected post-renovation value:</Text>{" "}
-            $1.85–2.10M (vs $1.275M purchase) once re-listed as a fully legal,
+            $1.85–2.10M (vs $1.25M contract) once re-listed as a fully legal,
             unit-separated 2-family with a new roof.
           </Text>
           <Text>
@@ -1240,6 +1807,211 @@ export default function DueDiligence() {
           the property.
         </Text>
       </Stack>
+
+      <Divider />
+
+      <H2>Pros and cons — updated with full contract package</H2>
+      <Text tone="secondary">
+        Synthesis of the proposed May 2026 contract package (K – Proposed +
+        Rider + Second Rider), 5/20/2026 inspection, BIS record, 2014 deed,
+        FY26 DOF tax bill, DG deal sheet, Collinson closing-costs worksheet,
+        and Randy Chang engagement letter. Not legal or financial advice.
+      </Text>
+
+      <Grid columns={2} gap={16}>
+        <Card>
+          <CardHeader>Pros</CardHeader>
+          <CardBody>
+            <Stack gap={6}>
+              <Text>
+                <Text weight="semibold">$25k below ask.</Text> Contract at
+                $1.25M vs $1.275M list — improves entry basis before any
+                seller credits.
+              </Text>
+              <Text>
+                <Text weight="semibold">Legal 2-family with hidden upside.</Text>{" "}
+                Contract (R-5, Second Rider) and 2014 deed (Doc 2014091701074001
+                — &quot;DWELLING ONLY — 2 FAMILY&quot;) confirm 2-family
+                classification. Ground floor already has its own kitchen,
+                bath, and entry. Re-separation ROI still ~14× ($530–715k
+                value on $30–55k work).
+              </Text>
+              <Text>
+                <Text weight="semibold">Turn-key finishes.</Text> Updated
+                kitchen, premium baths, refinished floors, finished basement
+                studio — saves $40–80k vs gut renovation.
+              </Text>
+              <Text>
+                <Text weight="semibold">Better-than-expected mechanicals.</Text>{" "}
+                2013 boiler, 2019 indirect HW tank, 3 × 100A service with
+                per-floor sub-panels — reduces Phase 1 electrical and boiler
+                budget by $10–20k vs original assumptions.
+              </Text>
+              <Text>
+                <Text weight="semibold">Extraordinarily low taxes.</Text>{" "}
+                $3,696.96/yr (DOF FY26) = ~0.30% effective rate on the $1.25M
+                contract price. Class 1 caps (6%/yr, 20%/5yr) keep this low
+                even after appreciation — durable cash-flow advantage on a
+                Brooklyn 2-family.
+              </Text>
+              <Text>
+                <Text weight="semibold">DOF value supports the price.</Text>{" "}
+                DOF estimated market value is $1,138,000 — only ~$112k below
+                contract. Appraisal risk is low for a comp-supported number.
+              </Text>
+              <Text>
+                <Text weight="semibold">Seller has room to negotiate.</Text>{" "}
+                2014 deed transfer taxes back-solve to a ~$695k acquisition.
+                At $1.25M he books ~$555k gross gain; a $14–28k credit is
+                small relative to his profit and easy for him to absorb.
+              </Text>
+              <Text>
+                <Text weight="semibold">Seller financial reps clean.</Text>{" "}
+                Contract warrants no mortgage default, no foreclosure, taxes
+                current (R-34). DOF Q3 bill confirms $0 outstanding charges
+                — independent verification.
+              </Text>
+              <Text>
+                <Text weight="semibold">R-21 closing protections.</Text>{" "}
+                Seller must deliver working plumbing, heat, electric, and a
+                leak-free roof at closing — your contractual hook for the
+                failed mini-splits and panel hazards.
+              </Text>
+              <Text>
+                <Text weight="semibold">Kitchen-removal mortgage out.</Text>{" "}
+                Second Rider refunds deposit if lender denies commitment solely
+                due to the removed upstairs kitchen. Concealed plumbing
+                remains behind sheetrock — lowers your unit-2 build-out cost.
+              </Text>
+              <Text>
+                <Text weight="semibold">Vacant delivery with teeth.</Text>{" "}
+                Entire premises vacant within 7 days of closing; $75/day
+                holdover penalty from $1,000 escrow.
+              </Text>
+              <Text>
+                <Text weight="semibold">Solid local counsel + brokers.</Text>{" "}
+                Randy Chang / Colin McGeough at a $3,000 flat fee covers
+                contract through closing; Redfin (Altilio / Harmel) +
+                Daniel Gale-Sotheby&apos;s (Daghmoumi / Becker), commissions
+                paid by seller (5% total).
+              </Text>
+            </Stack>
+          </CardBody>
+        </Card>
+
+        <Card>
+          <CardHeader>Cons</CardHeader>
+          <CardBody>
+            <Stack gap={6}>
+              <Text>
+                <Text weight="semibold">No inspection contingency.</Text>{" "}
+                As-is sale with PCDS waiver (R-37) and only a $500 inspection
+                reimbursement — not a repair credit. You cannot automatically
+                renegotiate or cancel for inspection items post-signing.
+              </Text>
+              <Text>
+                <Text weight="semibold">R-28 permit / CO escape hatch.</Text>{" "}
+                Seller can cancel and return deposit if CO or permit sign-offs
+                are missing — exactly the situation here (open 2003 A2, no C of
+                O). Seller is not obligated to cure.
+              </Text>
+              <Text>
+                <Text weight="semibold">§10(a) violations deleted · R-14 $500 cap.</Text>{" "}
+                Seller not required to clear DOB/ECB violations. Remediation
+                capped at $500; you inherit unpermitted cellar finish risk.
+              </Text>
+              <Text>
+                <Text weight="semibold">$12–25k HVAC failure.</Text> Two of
+                three mini-splits failed at inspection. Contract gives R-21
+                leverage but no guaranteed credit — must negotiate before
+                signing or hold firm at the final walk-through.
+              </Text>
+              <Text>
+                <Text weight="semibold">Mansion tax cliff at $1M.</Text>{" "}
+                $1.25M crosses the residential mansion-tax threshold, adding a
+                hard $12,500 to your closing costs that disappears entirely if
+                the price renegotiates to ≤ $1,000,000. The PCDS-waiver
+                $500 credit and DOF-value gap ($112k under contract) both
+                support a price retrade as the negotiating lever.
+              </Text>
+              <Text>
+                <Text weight="semibold">~$255k cash to close.</Text> $125k
+                deposit + ~$130k additional cash + ~$46–48k closing costs.
+                Mortgage tax ($19.2k) + mansion tax ($12.5k) alone is $31.7k
+                — about 2.5% of price — and is on top of the price you pay.
+              </Text>
+              <Text>
+                <Text weight="semibold">Financing mismatch.</Text> Contract
+                §8 floor is a $900,000 commitment; your closing-costs worksheet
+                plans for $1,000,000 (80% LTV). Have Chang amend §8 to match
+                your actual loan target, or accept that a $900k commitment
+                technically satisfies the contingency even if you wanted more.
+              </Text>
+              <Text>
+                <Text weight="semibold">Removed upstairs kitchen.</Text>{" "}
+                Current layout doesn&apos;t match legal 2-family use. Appraisal
+                and mortgage underwriting risk until re-separated; lender may
+                flag before you can execute the value-add plan.
+              </Text>
+              <Text>
+                <Text weight="semibold">Roof near end of life.</Text> 14–16 yrs
+                of 18–20 yr design life; $25–45k replacement in 2–4 yrs
+                (Phase 2).
+              </Text>
+              <Text>
+                <Text weight="semibold">IBZ location.</Text> Industrial Business
+                Zone — residential grandfathered but neighbors can be
+                industrial; noise/air/resale discount vs pure residential blocks.
+              </Text>
+              <Text>
+                <Text weight="semibold">Lead paint + waived inspection.</Text>{" "}
+                Pre-1960 building; you waived the 10-day lead inspection
+                opportunity and released seller from lead liability (R-19).
+              </Text>
+              <Text>
+                <Text weight="semibold">R-29 merger on deed.</Text> Once you
+                accept the deed, seller is discharged — any R-21 breach must
+                be resolved before closing, not after.
+              </Text>
+              <Text>
+                <Text weight="semibold">7-day post-closing possession delay.</Text>{" "}
+                Seller has up to 7 days after closing to vacate — not
+                immediate keys-on-the-table delivery.
+              </Text>
+              <Text>
+                <Text weight="semibold">Original waste lines + hidden foundation.</Text>{" "}
+                Inspector flagged aging cast-iron drains; finished basement
+                hides foundation/party walls. Sewer scope still outstanding.
+              </Text>
+              <Text>
+                <Text weight="semibold">Attorney scope excludes tax planning.</Text>{" "}
+                Engagement letter expressly excludes 1031, FIRPTA, capital
+                gains, and accounting. You need a separate CPA for the
+                house-hack income/depreciation model.
+              </Text>
+            </Stack>
+          </CardBody>
+        </Card>
+      </Grid>
+
+      <Callout tone="info" title="Bottom line">
+        <Text>
+          At $1.25M, the deal still pencils for a house-hack / 2-family
+          restoration play — but the proposed contract shifts most of the
+          risk to the buyer, and the closing costs ($46–48k of buyer-side
+          charges on top of $1.25M) plus the seller&apos;s substantial 2014
+          basis give you real negotiating room. Don&apos;t sign without:
+          (1) amending §10(a) + R-14 + R-28 so the seller must cure the open
+          permit and CO/LNO rather than cancel; (2) locking R-21 repairs or
+          $14–28k in credits for the failed mini-splits and panel hazards;
+          (3) amending §8 to the actual loan amount you&apos;ll commit to;
+          (4) confirming your lender will commit on a legal 2-family with no
+          C of O and a removed upstairs kitchen. If the seller won&apos;t
+          amend, push for a price retrade — ideally to or below $1,000,000
+          to clear the mansion tax — or walk. Your downside is small (1/3
+          of a $3,000 flat fee, ~$1,000) and your upside is six figures.
+        </Text>
+      </Callout>
 
       <Divider />
 
