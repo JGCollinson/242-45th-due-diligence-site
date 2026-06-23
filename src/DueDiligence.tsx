@@ -1292,16 +1292,18 @@ export default function DueDiligence() {
           a 4.75% cap that's{" "}
           <Text weight="semibold">$530k–$715k of value</Text> on a revised{" "}
           <Text weight="semibold">$30–55k</Text> separation budget. ROI ~12–18×.
-          Independent heat + hot water per unit is required for legal rental
-          separation — see below.
+          Independent space heat for unit 2 is a landlord duty; separate hot
+          water is strongly recommended for billing and true unit independence
+          but is not an HMC minimum — see below.
         </Text>
       </Callout>
 
       <H3>Unit-2 heating &amp; hot-water separation — legal requirements</H3>
       <Text tone="secondary">
-        Architect guidance (Jun 2026): upstairs rental unit needs its own heat
-        and domestic hot water. Not legal advice — confirm final design with
-        architect/PE, DOB, and counsel before permitting.
+        Architect guidance (Jun 2026): upstairs rental should have its own heat
+        and, for clean unit separation, its own domestic hot water. Not legal
+        advice — confirm final design with architect/PE, DOB, and counsel before
+        permitting.
       </Text>
 
       <Callout tone="info" title="Bottom line: no second boiler required — but you cannot offload heat to the tenant">
@@ -1309,59 +1311,68 @@ export default function DueDiligence() {
           <Text>
             NYC does <Text weight="semibold">not</Text> require a second
             boiler. A dedicated cold-climate mini-split heat pump on the
-            tenant&apos;s electric meter can satisfy &quot;independent
-            heating&quot; for unit 2. What you{" "}
+            tenant&apos;s electric meter can satisfy compliant space heat for
+            unit 2. What you{" "}
             <Text weight="semibold">cannot</Text> do is make the tenant
             &quot;rely on&quot; an existing AC head and walk away — as
             landlord, you must provide code-compliant heat during heat season
             (Oct 1–May 31).
           </Text>
           <Text>
-            Hot water is a separate obligation: the 2019 Burnham indirect tank
-            is boiler-fed and shared today. Unit 2 needs its own DHW source
-            (in-wall tankless electric or small electric tank on the tenant
-            meter). Keep the boiler + indirect tank for the owner unit only.
+            Hot water: HMC requires <Text weight="semibold">120°F at fixtures,
+            year-round, 24/7</Text> in each dwelling unit — not a separate
+            heater per unit. The existing boiler-fed indirect tank{" "}
+            <Text weight="semibold">can legally serve both units</Text> if it
+            reliably delivers that temperature upstairs. A dedicated electric
+            tankless or small tank on the tenant meter is{" "}
+            <Text weight="semibold">strongly recommended</Text> (not an HMC
+            minimum) so the tenant pays their own DHW and the units are truly
+            independent; otherwise you heat their water on your gas bill. Keep
+            the boiler + indirect tank for the owner unit either way.
           </Text>
         </Stack>
       </Callout>
 
       <Table
-        headers={["Requirement", "Legal standard", "What works at 242 45th", "What does not"]}
+        headers={["Topic", "Legal standard (HMC)", "Recommended for 242 45th separation", "What does not work"]}
         rows={[
           [
             "Space heat (unit 2)",
-            "HMC: 68°F daytime (6 AM–10 PM) when outdoor temp < 55°F; 62°F overnight (10 PM–6 AM). Landlord duty — Class C violation if failed.",
+            "68°F daytime (6 AM–10 PM) when outdoor temp < 55°F; 62°F overnight (10 PM–6 AM). Landlord duty — Class C violation if failed.",
             "New cold-climate mini-split sized via Manual J, on tenant sub-meter. Isolate upstairs baseboard from shared boiler loop. Optional: keep boiler zone as backup only if designed that way.",
             "Existing 12–13 yr Fujitsu as sole heat (not cold-climate rated; only 1 of 3 units works). Shared boiler thermostat/zone with no physical separation. Contract language shifting heat duty to tenant.",
           ],
           [
             "Domestic hot water (unit 2)",
-            "HMC: 120°F year-round, 24/7 at fixtures.",
-            "Dedicated electric tankless or 30–50 gal electric tank on tenant meter. Size for fixture count + panel load.",
-            "Shared indirect tank fed by single boiler (current setup). Expecting tenant to use stove/space heater for water.",
+            "120°F year-round, 24/7 at fixtures in each dwelling unit. Shared central DHW is legal if both units receive compliant temperature.",
+            "Dedicated electric tankless or 30–50 gal electric tank on tenant meter — for billing, decoupling from boiler service, and true unit independence. Size for fixture count + panel load.",
+            "No hot water or chronic under-temperature at upstairs fixtures. Expecting tenant to use stove/space heater for water.",
           ],
           [
             "Second boiler",
-            "Not required by code if another compliant heat source serves the unit.",
-            "Skip — adds ~$8–15k+ (boiler, gas line/meter, venting, permit) vs ~$4–10k for cold-climate heat pump + ~$2–6k for electric DHW.",
+            "Not required if another compliant heat source serves the unit.",
+            "Skip — adds ~$8–15k+ (boiler, gas line/meter, venting, permit) vs ~$4–10k for cold-climate heat pump + optional ~$2–6k for electric DHW.",
             "Assuming architect meant boiler specifically rather than independent heat.",
           ],
           [
-            "Electrical separation",
-            "Independent meters or sub-meters so tenant pays own heat/DHW load.",
+            "Utility / meter separation",
+            "No HMC rule mandating separate DHW equipment; sub-metering is a practical separation goal, not a hot-water habitability minimum.",
             "Existing 60A upstairs sub-panel + Con Ed sub-metering (already in separation budget). Verify panel capacity for heat-pump heating draw (much higher than cooling).",
-            "Landlord-paid gas for upstairs baseboard while unit is rented.",
+            "Landlord-paid gas for upstairs baseboard or tenant DHW while unit is rented — legal to rent, but poor economics and weak unit independence.",
           ],
         ]}
       />
 
       <Text tone="tertiary" size="small">
-        Incremental cost for unit-2 heat + DHW (above base separation line):
-        ~$6–16k — cold-climate mini-split $4–10k, electric tankless/tank $2–6k,
-        plus isolation of upstairs hydronic zone. Still cheaper than a second
-        boiler and aligns with per-floor sub-panels already confirmed at
-        inspection. Budget a new upstairs heat pump regardless — the existing
-        unit is the only working head and is near end of life.
+        Incremental cost for unit-2 space heat (above base separation line):
+        ~$4–10k for a cold-climate mini-split plus hydronic zone isolation.
+        Add ~$2–6k for dedicated electric DHW if you want tenant-paid hot
+        water and decoupling from the boiler — recommended, not required by
+        HMC. Still cheaper than a second boiler. Budget a new upstairs heat
+        pump regardless — the existing unit is the only working head and is
+        near end of life. DOB plans or lender conditions for your specific
+        separation filing may specify independent utilities even when base code
+        does not.
       </Text>
 
       <Callout tone="warning" title="The single biggest cost drag is the HVAC failure">
@@ -1444,7 +1455,7 @@ export default function DueDiligence() {
             "$30–55k",
             "$530–715k",
             "~14×",
-            "Reduced from prior $35–60k: two 60A sub-panels are already one-per-floor, so electrical sub-metering is mostly a meter-pan + utility-coordination job. Add ~$6–16k for unit-2 cold-climate heat pump + electric DHW + hydronic zone isolation; keep boiler + indirect tank for owner unit only.",
+            "Reduced from prior $35–60k: two 60A sub-panels are already one-per-floor, so electrical sub-metering is mostly a meter-pan + utility-coordination job. Add ~$4–10k for unit-2 cold-climate heat pump + hydronic zone isolation (required for compliant landlord heat). Optionally add ~$2–6k for dedicated electric DHW on tenant meter (recommended for billing/independence, not HMC minimum). Keep boiler + indirect tank — shared DHW is legal if it delivers 120°F upstairs.",
           ],
           [
             "2",
@@ -1669,7 +1680,7 @@ export default function DueDiligence() {
           [
             "Mechanical room (corrected per inspection)",
             "In service: Weil McLain gas boiler (MFG 02/2013, fair) + one 50-gal Burnham indirect HW tank (MFG 05/2019, blue, boiler-fed). Listing photos also show an older water heater disconnected and unused — not part of the active system. Copper repipe, washer/dryer. Listing photos may show ceiling discoloration above the mech room; not called out in the 5/20/2026 inspection.",
-            "Keep both active systems on an annual service contract (~$300–500/yr) for the owner unit. Unit 2 still needs separate electric DHW + cold-climate heat pump — see Unit-2 heating & hot-water section. If ceiling discoloration in photos is real, ask the seller for cause before assuming an active leak.",
+            "Keep both active systems on an annual service contract (~$300–500/yr). Shared indirect DHW is legal for both units if it delivers 120°F upstairs; separate electric DHW is recommended for tenant billing and independence — see Unit-2 heating & hot-water section. Unit 2 still needs compliant space heat (cold-climate mini-split). If ceiling discoloration in photos is real, ask the seller for cause before assuming an active leak.",
           ],
           [
             "Kitchen (ground floor)",
