@@ -9,6 +9,7 @@ Built from a [Cursor Canvas](https://cursor.com/docs/agent/tools/canvas) and dep
 ```bash
 npm install
 npm run dev
+something
 ```
 
 Open http://localhost:5173
