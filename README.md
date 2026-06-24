@@ -1,6 +1,8 @@
 # 242 45th St — Due Diligence
 
-Interactive due-diligence report for **** (inspection checklist, BIS records, renovation priorities).
+Interactive due-diligence report for **242 45th St, Brooklyn** (inspection checklist, BIS records, renovation brief, phased budget).
+
+**Printable brief:** open [`public/renovation-brief.html`](public/renovation-brief.html) in the browser → Print → Save as PDF (for architect / contractor).
 
 Built from a [Cursor Canvas](https://cursor.com/docs/agent/tools/canvas) and deployed as a static site.
 

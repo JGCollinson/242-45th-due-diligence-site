@@ -1161,6 +1161,525 @@ export default function DueDiligence() {
 
       <Divider />
 
+      <H2>Residential renovation brief</H2>
+      <Text tone="secondary">
+        Owner design scope for a cohesive architectural overhaul — not
+        incremental repair. Each line states what a space should{" "}
+        <Text weight="semibold">become</Text>, so an architect can design
+        toward the highest outcome. Priority tags reflect owner must-haves vs.
+        nice-to-haves (Jun 2026).{" "}
+        <Link href={`${import.meta.env.BASE_URL}renovation-brief.html`}>
+          One-page PDF brief for architect / contractor
+        </Link>{" "}
+        — open and use Print → Save as PDF.
+      </Text>
+
+      <Callout tone="success" title="Must-haves (11 items — bid and permit around these first)">
+        <Stack gap={4}>
+          <Text>
+            Top-floor kitchen · tankless water heater + add shower function to
+            the existing top-floor tub · retile or regrout that bath · remove drywall near
+            bed + rebuild closet (top-floor bedroom) · close banister opening
+            with full-height wall + transom above door to top floor · second
+            internet cable chase · remove wall between ground-floor living room
+            and parlor · ground-floor kitchen pantry + booth refresh · basement moisture mitigation
+            (test-first seal/coating) · exterior hose spigot + outlet out front.
+          </Text>
+          <Text tone="secondary">
+            Everything else in this brief — including the full ground-floor
+            kitchen overhaul, acoustic flooring, pocket doors, entry millwork,
+            storage built into the wall under the stairs, and parlor-to-bedroom conversion — is
+            nice-to-have and can phase after must-haves.
+          </Text>
+        </Stack>
+      </Callout>
+
+      <H3>Design intent (global)</H3>
+      <Stack gap={4}>
+        <Text>
+          · Unify the renovation as one integrated project, not isolated
+          trades.
+        </Text>
+        <Text>
+          · Prioritize spatial flow: open living where desired, defined rooms
+          where needed; pocket/barn/transom elements to control light, sound,
+          and pantry/storage integration.
+        </Text>
+        <Text>
+          · Modernize wet areas with shower functionality, retiling, and upgraded
+          water-heating strategy.
+        </Text>
+        <Text>
+          · Improve comfort: sound dampening, humidity control, new flooring,
+          and dedicated second-internet infrastructure.
+        </Text>
+        <Text>
+          · Maximize storage — closet to ceiling, under-stair, built-in entry,
+          purpose-built pantries.
+        </Text>
+        <Text>· Extend exterior utility with dedicated hose access.</Text>
+      </Stack>
+
+      <H3>Scope by floor</H3>
+      <Table
+        headers={["Floor / space", "Priority", "Target outcome"]}
+        columnAlign={["left", "left", "left"]}
+        rowTone={[
+          "success",
+          "success",
+          "success",
+          "success",
+          "success",
+          undefined,
+          "success",
+          "success",
+          "success",
+          undefined,
+          undefined,
+          undefined,
+          undefined,
+          undefined,
+          "success",
+          undefined,
+          "success",
+        ]}
+        rows={[
+          [
+            "Top floor — Kitchen",
+            "Must-have",
+            "Transform existing bedroom into L-shaped kitchen + island tied into concealed gas/water stubs (Second Rider). Bring down existing closet to create pantry; include dishwasher, exterior range vent, and tile flooring. Replumb + finish — not new utility runs.",
+          ],
+          [
+            "Top floor — Primary bath",
+            "Must-have",
+            "Add shower function to the existing tub (e.g. shower head/controls and splash protection as needed). Retile entire floor or regrout if tile is sound. Tankless water heater with bypass to existing boiler — both systems usable and serviceable independently.",
+          ],
+          [
+            "Top floor — Primary bath upgrade",
+            "Nice-to-have",
+            "Remove tub and convert to a standalone standing shower / wet-area upgrade if budget allows. Not required for the must-have scope because adding shower function to the tub satisfies the bathing requirement.",
+          ],
+          [
+            "Top floor — Bedroom",
+            "Must-have",
+            "Remove drywall near bed area to reshape volume, sight lines, and light (confirm structure). Rebuild closet full-height to ceiling with custom interior fit-out.",
+          ],
+          [
+            "Top floor — Living room",
+            "Must-have",
+            "Close existing banister opening; construct full-height wall with transom above door to top floor.",
+          ],
+          [
+            "Top floor — Living room (continued)",
+            "Must-have",
+            "Second dedicated cable run for separate internet service (chase with framing) with termination point coordinated before walls are closed.",
+          ],
+          [
+            "Top floor — Flooring",
+            "Nice-to-have",
+            "Sound-dampening flooring across the entire top floor with new flooring — one continuous acoustic and finish system.",
+          ],
+          [
+            "Ground floor — Living / parlor",
+            "Must-have",
+            "Take down the existing wall separating living room and parlor to create a larger, flexible open zone. This is a removal scope, not a wall relocation; confirm whether the wall is load-bearing before bidding.",
+          ],
+          [
+            "Ground floor — Parlor",
+            "Nice-to-have",
+            "Reprogram parlor as dedicated bedroom: layout, egress, lighting, closet/storage, bedroom-standard finish-out.",
+          ],
+          [
+            "Ground floor — Kitchen",
+            "Must-have (partial)",
+            "Add corner pantry with corrected door swing/access. Refresh L-shaped booth seating. Must-have scope stops here.",
+          ],
+          [
+            "Ground floor — Kitchen (partial)",
+            "Nice-to-have",
+            "Add cabinets above existing cabinetry for additional storage without triggering the full kitchen overhaul.",
+          ],
+          [
+            "Ground floor — Kitchen (continued)",
+            "Nice-to-have",
+            "Full overhaul: reverse/reorient doors, custom cabinetry + island, ice maker, pocket doors at kitchen boundary, appliance package matching upstairs kitchen quality.",
+          ],
+          [
+            "Ground floor — Entry",
+            "Nice-to-have",
+            "Built-in coat cubbies and shoe storage adjacent to stairs — architectural entry moment, not loose furniture.",
+          ],
+          [
+            "Basement — Under-stair",
+            "Nice-to-have",
+            "Purpose-built storage built into the wall under the stairs, integrated with stair refurbishment — finish, structure, and access as one element.",
+          ],
+          [
+            "Basement — Moisture & floor",
+            "Must-have (moisture)",
+            "Test-first moisture strategy: epoxy, concrete paint, or penetrating sealant — architect recommends best system from test results. Full basement flooring replacement is nice-to-have; coordinate with moisture assembly if pursued.",
+          ],
+          [
+            "Exterior — Hose bib + outlet",
+            "Must-have",
+            "New exterior spigot and weather-rated electric outlet out front — practical location, freeze-protected plumbing, GFCI/weatherproof electrical protection, coordinated penetration details.",
+          ],
+        ]}
+      />
+
+      <H3>For architect to resolve early</H3>
+      <Table
+        headers={["Topic", "Decision needed"]}
+        rows={[
+          [
+            "Structural",
+            "Which walls are load-bearing (living/parlor knockdown, banister closure, bedroom drywall removal)?",
+          ],
+          [
+            "Kitchen parity",
+            "Align appliance, island, and pantry specs between top and ground floors.",
+          ],
+          [
+            "Plumbing / HVAC",
+            "Tankless + boiler bypass routing; stove vent path to exterior.",
+          ],
+          [
+            "Acoustics",
+            "Sound-dampening floor assembly for entire top floor (nice-to-have).",
+          ],
+          [
+            "Basement moisture",
+            "Test-first before selecting seal vs. paint vs. epoxy.",
+          ],
+          [
+            "Infrastructure",
+            "Second internet cable path, chase locations, and termination point (must-have).",
+          ],
+        ]}
+      />
+
+      <H3>Suggested deliverables to request</H3>
+      <Stack gap={4}>
+        <Text>
+          1. Existing conditions (dimensions, structure, MEP).
+        </Text>
+        <Text>
+          2. Schematic design per floor — all wall removals, openings, and
+          built-ins.
+        </Text>
+        <Text>
+          3. Kitchen layouts (both floors) with appliance and venting schedules.
+        </Text>
+        <Text>
+          4. Bathroom wet-area details and tile/finish elevations.
+        </Text>
+        <Text>
+          5. Stair + under-stair wall storage design development.
+        </Text>
+        <Text>
+          6. Basement moisture recommendation and flooring spec.
+        </Text>
+        <Text>
+          7. Phasing plan if construction proceeds by floor or zone (must-haves
+          in Phase 1).
+        </Text>
+      </Stack>
+
+      <H3>Phased budget — must-haves vs. full vision</H3>
+      <Text tone="secondary">
+        Cost bands assume{" "}
+        <Text weight="semibold">utilities already separated</Text> (3 × 100A
+        service, independent 60A sub-panels per floor, per-floor gas/water).
+        Phase 1 is mostly drywall, tie-ins to existing concealed kitchen
+        rough-ins, tankless + tub shower work, and banister closure — not new
+        metering or full utility runs. NYC licensed-GC, permitted, mid-2026.
+      </Text>
+      <Table
+        headers={[
+          "Phase",
+          "Scope",
+          "Cost band",
+          "Value add (mid)",
+          "Notes",
+        ]}
+        columnAlign={["left", "left", "right", "right", "left"]}
+        rowTone={[
+          "success",
+          "success",
+          "success",
+          "success",
+          "success",
+          "success",
+          undefined,
+          undefined,
+          undefined,
+        ]}
+        rows={[
+          [
+            "1A — Must-haves (design)",
+            "Top-floor kitchen (tie-in to existing gas/water stubs) · bath (add shower to tub, tile/regrout, tankless+bypass) · bedroom drywall + closet · banister wall + transom · second internet cable chase · remove GF living/parlor wall · GF pantry + booth · basement moisture · front hose spigot + outlet",
+            "$38–76k",
+            "$110–185k",
+            "Second Rider: concealed plumbing remains behind sheetrock — kitchen is replumb + finish, not new service runs. Banister closure separates upstairs from stair opening.",
+          ],
+          [
+            "1B — Legal 2-family close-out",
+            "Fire-rated unit-entry door, smoke/CO, separate locks, DOB/LNO filing — utilities and sub-panels already in place; optional unit-2 cold-climate heat pump if renting ($4–10k add-on)",
+            "$4–10k",
+            "$530–715k",
+            "Highest ROI line, but low cash cost here because metering and sub-panels are done. Coordinate permit with kitchen/bath filing.",
+          ],
+          [
+            "1C — Non-architectural due diligence",
+            "Cellar ACP back-file; sewer lateral camera scope. Mini-split replacement is excluded from architect scope because the $6.5k quote has already been credited.",
+            "$3.5–25k",
+            "$35–75k",
+            "Track separately from architectural bidding. Include only if you want the same planning packet to show post-closing risk items.",
+          ],
+          [
+            "Architectural Phase 1 total",
+            "1A + 1B only",
+            "$42–86k",
+            "$640–900k",
+            "Must-have design + legal close-out only. Excludes credited mini-splits and other non-architectural due diligence.",
+          ],
+          [
+            "2 — Full vision (nice-to-have)",
+            "GF kitchen full overhaul (pocket doors, island, ice maker) · sound-dampening flooring entire top floor with new flooring · parlor → bedroom · entry built-ins · under-stair wall storage + stair refurb · basement floor replacement",
+            "$115–215k",
+            "$80–150k",
+            "Lifestyle and resale lift. Phase after must-haves and rental cash flow.",
+          ],
+          [
+            "3 — Deferred maintenance",
+            "Roof + R-49 insulation · backyard deck/fence · cosmetic refresh · rear brick · front entry safety",
+            "$58–115k",
+            "$86–156k",
+            "Original Phase 2 items — schedule yr 2–4, not blocked by must-haves.",
+          ],
+          [
+            "Full project total",
+            "Phases 1–3",
+            "$222–442k",
+            "—",
+            "Must-haves + close-out (~$42–86k) achieve legal 2-family + owner program; full vision is incremental.",
+          ],
+        ]}
+      />
+
+      <Divider />
+
+      <H2>Appraisal &amp; financing the renovation</H2>
+      <Text tone="secondary">
+        Bank appraisal (E-Value Appraisals, eff. 6/18/2026) and Rocket Mortgage
+        loan terms. Analysis of how to fund a $40–90k renovation: reduce the
+        down payment vs. a HELOC. Not financial advice — confirm with your
+        lender and a CPA before locking.
+      </Text>
+
+      <Grid columns={4} gap={12}>
+        <Stat value="$1.26M" label="Appraised value (> $1.25M price)" tone="success" />
+        <Stat value="$10k" label="Appraisal cushion over contract" tone="success" />
+        <Stat value="Single-family" label="Appraised & financed use" tone="info" />
+        <Stat value="C3 / Q4" label="Condition / quality — no repairs noted" tone="success" />
+      </Grid>
+
+      <Callout tone="success" title="The appraisal de-risks your financing">
+        <Text>
+          The property appraised at <Text weight="semibold">$1,260,000</Text>,
+          $10k above the $1.25M contract — so there is{" "}
+          <Text weight="semibold">no appraisal gap</Text> and no extra cash
+          needed to cover a shortfall. The appraiser rated it{" "}
+          <Text weight="semibold">C3, &quot;no repairs needed,&quot;</Text> with
+          kitchen and baths remodeled in the last 1–5 years. Note it was valued
+          and is being financed <Text weight="semibold">as a single-family,
+          owner-occupied primary residence</Text> (the legal 2-family is
+          currently used as one home); the income approach was not developed.
+        </Text>
+      </Callout>
+
+      <H3>Loan options on the table</H3>
+      <Table
+        headers={[
+          "Option",
+          "Down payment",
+          "Rate",
+          "MI / mo",
+          "Total monthly (PITI + MI)",
+          "Notes",
+        ]}
+        columnAlign={["left", "right", "right", "right", "right", "left"]}
+        rowTone={["warning", "success", "info", undefined]}
+        rows={[
+          [
+            "A — 10% down",
+            "$125,000",
+            "6.750%",
+            "$140.63",
+            "$8,005.53",
+            "Frees ~$62,500 of cash vs. 15% down — but the higher rate applies to the entire $1,125,000 loan and MI is higher.",
+          ],
+          [
+            "B — 15% down",
+            "$187,500",
+            "6.500%",
+            "$80.00",
+            "$7,363.90",
+            "Lower rate on the full $1,062,500 loan, lower MI, faster MI removal. Rocket loan is currently set up this way.",
+          ],
+          [
+            "HELOC (add-on to B)",
+            "—",
+            "10.75% / 20yr",
+            "—",
+            "$507.62 on $50k drawn",
+            "Funds the renovation; only the drawn balance bears interest and your first-mortgage rate stays at 6.50%.",
+          ],
+        ]}
+      />
+
+      <H3>True cost of each way to fund the renovation</H3>
+      <Table
+        headers={[
+          "Funding source",
+          "Effective annual cost (yr 1)",
+          "Raises your 1st-mortgage rate?",
+          "Verdict",
+        ]}
+        columnAlign={["left", "right", "left", "left"]}
+        rowTone={["success", "success", "danger"]}
+        rows={[
+          [
+            "Pay cash from reserves",
+            "~0% (opportunity cost only)",
+            "No",
+            "Cheapest — if you keep a safety + HVAC/roof reserve after closing.",
+          ],
+          [
+            "HELOC $50k @ 10.75% / 20yr",
+            "10.75% on drawn balance",
+            "No",
+            "Best borrowed-money option. Flexible bridge; repay or refinance later.",
+          ],
+          [
+            "Drop to 10% down (frees $62.5k)",
+            "~12.2% blended",
+            "Yes — +0.25% on the whole $1.06M loan + higher MI",
+            "Most expensive. Avoid.",
+          ],
+        ]}
+      />
+
+      <Callout tone="info" title="Bottom line: the HELOC is cheaper than reducing your down payment">
+        <Stack gap={6}>
+          <Text>
+            Going from 15% down to 10% down raises your monthly payment by{" "}
+            <Text weight="semibold">$641.63</Text> ($8,005.53 vs $7,363.90) to
+            free ~$62,500 of cash. Almost all of that increase is interest and
+            MI, not principal — about{" "}
+            <Text weight="semibold">$7,600/yr</Text>, an effective{" "}
+            <Text weight="semibold">~12.2%</Text> cost on the $62,500. That is
+            higher than the HELOC&apos;s 10.75%, because dropping to 10% down
+            bumps the rate <Text weight="semibold">0.25% on the entire
+            $1,062,500</Text> you would borrow anyway (~$2,650/yr of pure
+            penalty) and raises MI ~$60/mo.
+          </Text>
+          <Text>
+            <Text weight="semibold">Smartest structure:</Text> take{" "}
+            <Text weight="semibold">Option B (15% down, 6.50%)</Text> to lock the
+            lower rate and lower MI on the whole loan, fund as much of the
+            renovation as prudent from <Text weight="semibold">cash</Text>, and
+            use the <Text weight="semibold">HELOC only for the remainder</Text>.
+            The HELOC is a short-term bridge: after the renovation, the
+            $1.26M-plus appraisal supports dropping MI on reappraisal and/or a
+            cash-out refinance to retire the HELOC at first-mortgage rates.
+          </Text>
+          <Text tone="secondary">
+            Tax note: your acquisition debt already exceeds the $750k
+            mortgage-interest cap (MFJ), so the marginal interest on either route
+            is largely non-deductible — roughly a wash. Confirm with a CPA.
+          </Text>
+        </Stack>
+      </Callout>
+
+      <Callout tone="info" title="Exit path: clearing PMI and the HELOC by reappraisal or refinance (possible, not guaranteed)">
+        <Stack gap={6}>
+          <Text>
+            Because the renovation should raise the home&apos;s value, a{" "}
+            <Text weight="semibold">second appraisal after the work is
+            completed</Text> could let you shed the mortgage insurance and unwind
+            the HELOC. There are two distinct mechanisms — and each has timing
+            limits, so this is a plausible plan, not a certainty.
+          </Text>
+          <Text>
+            <Text weight="semibold">1. Cancel PMI on the existing loan (no
+            refinance).</Text>{" "}
+            You can ask the servicer to cancel PMI once a new appraisal shows you
+            at or below ~80% LTV on <Text weight="semibold">current</Text> value.
+            The catch is seasoning: Fannie/Freddie servicers generally want the
+            loan <Text weight="semibold">~2 years old</Text> to use a new
+            appraisal at 80% (or ~5 years at 75%) — though the 2-year wait is
+            often <Text weight="semibold">shortened or waived when the equity gain
+            comes from documented improvements</Text>. You pay for the appraisal
+            (~$500–900). PMI also auto-terminates at 78% LTV of the original value
+            on the amortization schedule regardless.
+          </Text>
+          <Text>
+            <Text weight="semibold">2. Refinance into a new first mortgage.</Text>{" "}
+            If the post-work appraisal puts you at ≤80% LTV, a refinance carries{" "}
+            <Text weight="semibold">no PMI</Text>, and the{" "}
+            <Text weight="semibold">HELOC balance can be folded into the new
+            loan</Text> — eliminating the separate HELOC payment. Rate/term refis
+            usually have little or no seasoning; cash-out refis (which a HELOC
+            payoff can trigger) typically need <Text weight="semibold">~6–12
+            months</Text> of seasoning. A refinance only makes sense if rates at
+            that time produce a blended payment you like.
+          </Text>
+          <Text tone="secondary">
+            One clarification: a <Text weight="semibold">HELOC does not carry
+            mortgage insurance</Text> — it just has its own higher, variable rate.
+            So what you would be eliminating is (a) PMI on the first mortgage and
+            (b) the HELOC balance itself. Whether and when either is achievable
+            depends on the post-work appraised value, your servicer/investor
+            rules, the seasoning windows above, and prevailing rates. Confirm the
+            specifics with Rocket and your loan servicer before relying on it.
+          </Text>
+        </Stack>
+      </Callout>
+
+      <Callout tone="warning" title="Priorities recheck — single-family basis changes the value framing">
+        <Stack gap={6}>
+          <Text>
+            The appraisal values this as a <Text weight="semibold">single-family
+            home</Text> on sales comps (~$750–865/sf), supporting ~$1.26–1.4M —
+            <Text weight="semibold"> not</Text> the $1.85–2.1M figure that
+            depends on re-separating and renting a second unit. Your defined
+            must-haves (kitchen, bath shower + tankless, bedroom/closet,
+            banister wall, GF open-plan, pantry/booth, basement moisture, hose
+            bib + outlet) are <Text weight="semibold">lifestyle and
+            value-maintaining</Text> on a single-family basis — reasonable, and
+            fundable inside the $42–86k Phase 1 band — but they will not move the
+            appraised value as much as the income-based 2-family projection.
+          </Text>
+          <Text>
+            The <Text weight="semibold">restore-the-2-family</Text> play remains
+            the single highest-ROI move (~$530–715k of capitalized value), but it
+            is <Text weight="semibold">not in your must-haves</Text> and is not
+            reflected in how you are financing the home. Treat it as an optional
+            future income project, not part of this renovation.
+          </Text>
+          <Text>
+            The appraiser is <Text weight="semibold">not</Text> a systems
+            inspector — &quot;no repairs needed&quot; does not override the
+            5/20/2026 inspection. The mini-split replacement ($6,500) is already
+            credited and excluded from architect scope; the roof (yr 2–4) and a
+            pre-closing sewer scope still stand as separate due-diligence items.
+          </Text>
+        </Stack>
+      </Callout>
+
+      <Divider />
+
       <H2>Value-improvement priorities</H2>
       <Text tone="secondary">
         Ranked by projected return on dollars actually spent <em>by you</em>{" "}
@@ -1180,16 +1699,17 @@ export default function DueDiligence() {
           <Text weight="semibold">independent 60A sub-panels per floor</Text>{" "}
           — the building is already physically wired for per-floor metering;
           (b) the ground floor has its own kitchen, full bath, and separate
-          front entry. Remaining work is mostly upstairs: add a small kitchen
-          in the family-room area, fire-rated unit-entry door at the top of
-          the stair, sub-meter Con Ed, and separate gas/water shutoffs. Sunset
+          front entry.           Remaining separation work: tie existing concealed gas/water into a
+          new top-floor kitchen, close the banister opening (wall + transom),
+          fire-rated unit-entry door, and DOB close-out — not new metering or
+          sub-panels. Sunset
           Park 1–2 BR floor-throughs rent $3,000–$4,000/mo (~$25–34k net). At
-          a 4.75% cap that's{" "}
-          <Text weight="semibold">$530k–$715k of value</Text> on a{" "}
-          <Text weight="semibold">$30–55k</Text> separation budget. ROI ~12–18×.
-          Independent space heat for unit 2 is a landlord duty; separate hot
-          water is strongly recommended for billing and true unit independence
-          but is not an HMC minimum — see below.
+          a 4.75% cap that&apos;s{" "}
+          <Text weight="semibold">$530k–$715k of value</Text> on roughly{" "}
+          <Text weight="semibold">$42–86k</Text> of owner must-have work plus{" "}
+          <Text weight="semibold">$4–10k</Text> legal close-out (utilities
+          already separated). ROI ~12–18× on the separation economics; finish
+          scope is mostly drywall and replumb tie-ins.
         </Text>
       </Callout>
 
@@ -1283,42 +1803,41 @@ export default function DueDiligence() {
         </Text>
       </Callout>
 
-      <H3>Projected value impact vs cost</H3>
+      <H3>Projected value impact vs cost (owner scope)</H3>
       <BarChart
         categories={[
-          "Re-separate 2-family",
-          "HVAC: replace 2 mini-splits (net of credit)",
-          "Roof replacement (Phase 2)",
-          "Cellar de-risk (paperwork)",
-          "Add 3rd bath upstairs",
-          "Cosmetic refresh + electrical safety",
-          "Backyard / deck",
-          "Combine small bedroom",
-          "Front entry safety package",
-          "Rear brick + sewer scope",
+          "2-family separation + heat",
+          "Top-floor kitchen",
+          "Top-floor bath",
+          "Wall removal + banister + closet",
+          "GF wall removal + pantry/booth",
+          "Basement + hose/outlet",
+          "Cellar + sewer de-risk",
+          "Full vision (Phase 2)",
+          "Roof + deferred (Phase 3)",
         ]}
         series={[
           {
             name: "Cost (midpoint, $k)",
-            data: [43, 6, 35, 7, 28, 10, 22, 10, 6, 12],
+            data: [7, 22, 10, 12, 8, 4, 10, 165, 87],
             tone: "warning",
           },
           {
             name: "Projected value add ($k)",
-            data: [620, 30, 55, 27, 45, 35, 32, 27, 12, 14],
+            data: [620, 45, 25, 30, 40, 10, 31, 115, 121],
             tone: "success",
           },
         ]}
-        height={280}
+        height={300}
         valueSuffix="k"
       />
       <Text tone="tertiary" size="small">
-        Midpoint cost (net of seller credits on HVAC) vs midpoint projected
-        sale-value add at resale (or capitalized rental income for the
-        2-family conversion). Excludes any income earned while held.
+        Midpoint cost vs projected sale-value add (or capitalized rental income
+        for separation). Phase 1 assumes existing utility separation and
+        concealed kitchen rough-ins — tie-in work, not new infrastructure.
       </Text>
 
-      <H3>Detailed renovation budget &amp; ROI</H3>
+      <H3>Detailed renovation budget &amp; ROI (aligned to owner brief)</H3>
       <Table
         headers={[
           "#",
@@ -1332,11 +1851,13 @@ export default function DueDiligence() {
         rowTone={[
           "success",
           "success",
+          "success",
+          "success",
+          "success",
+          "success",
+          "success",
+          "success",
           "info",
-          "info",
-          "info",
-          "info",
-          undefined,
           undefined,
           undefined,
           undefined,
@@ -1346,91 +1867,91 @@ export default function DueDiligence() {
         rows={[
           [
             "1",
-            "Restore legal 2-family (add upstairs kitchen, fire-rated unit door, separate Con Ed meters using existing per-floor sub-panels, gas/water sub-shutoffs, smoke/CO, separate locks)",
-            "$30–55k",
+            "Legal 2-family close-out: fire-rated unit door, smoke/CO, separate locks, DOB/LNO filing — utilities already separated (3 × 100A, per-floor 60A sub-panels)",
+            "$4–10k",
             "$530–715k",
-            "~14×",
-            "Two 60A sub-panels are already one-per-floor, so electrical sub-metering is mostly a meter-pan + utility-coordination job. Add ~$4–10k for unit-2 cold-climate heat pump + hydronic zone isolation (required for compliant landlord heat). Optionally add ~$2–6k for dedicated electric DHW on tenant meter (recommended for billing/independence, not HMC minimum). Keep boiler + indirect tank — shared DHW is legal if it delivers 120°F upstairs.",
+            "~50×+",
+            "Highest ROI, lowest cash: no new metering or sub-panel work. Add ~$4–10k for unit-2 cold-climate heat pump if renting upstairs. Tankless in bath (must-have) ties to existing rough-ins.",
           ],
           [
             "2",
-            "Cellar paperwork de-risk: back-file ACP for finishes / electrical / mini-split; confirm no second cookline or bedroom claim",
-            "$3–10k",
-            "$15–40k",
-            "~4×",
-            "Risk that the finish work, recessed lighting, and mini-split install were ever permitted. A small belated filing usually legalizes. Inspector noted basement finishes prevented assessment of foundation / beams.",
+            "Top-floor kitchen (must-have): transform existing bedroom into L-shaped kitchen + island; tie existing concealed gas/water stubs into new sink/range/DW; bring down closet for pantry; exterior range vent; cabinetry + tile flooring",
+            "$15–28k",
+            "$35–55k",
+            "~1.8×",
+            "Second Rider confirms plumbing remains behind sheetrock — replumb and finish, not new service runs from cellar. Scope includes bedroom-to-kitchen conversion and closet-to-pantry work.",
           ],
           [
             "3",
-            "Combine the 80 sf bedroom with adjacent 16×9 to make a true primary suite (or keep '3-bed' label for resale)",
-            "$5–15k",
-            "$20–35k",
-            "~2.5×",
-            "Two of three bedrooms are <100 sf. A true primary scans better in listings. Decide based on hold-vs-sell.",
+            "Top-floor bath (must-have): add shower function to existing tub, retile floor or regrout, tankless water heater with boiler bypass",
+            "$6–14k",
+            "$18–32k",
+            "~2×",
+            "Must-have is shower functionality, not tub removal. Standalone shower / wet-room conversion is Phase 2 nice-to-have.",
           ],
           [
             "4",
-            "Cosmetic refresh + electrical-safety punch list: repaint purple/red rooms neutral, refinish ground-floor floor, light fixtures, smart thermostats, fix sub-panel covers, label all 3 panels, replace failed bath fixture & loud bath fan, cooktop-igniter",
-            "$6–15k",
-            "$25–50k",
-            "~3.5×",
-            "Most of the inspection's small punch list rolls into one pass with a licensed electrician + handyman. Do right before sale, not at purchase — except panel-cover safety items, which are immediate.",
+            "Top-floor bedroom + banister (must-have): drywall removal near bed + full-height closet; close banister opening with full wall + transom above door",
+            "$7–17k",
+            "$20–35k",
+            "~1.8×",
+            "Mostly framing and drywall. Banister closure is the physical unit separation at the stair — confirm structure before fixed-price bid.",
           ],
           [
             "5",
-            "HVAC: replace 2 failed Fujitsu mini-splits (main + basement) with modern high-SEER units (after applying seller credit)",
-            "$2–7k net",
-            "$20–35k",
-            "~5×",
-            "Gross cost $12–25k. Negotiate $10–18k seller credit based on inspection report; pay the difference out of pocket. Without the credit, ROI is closer to 1.5×. The upstairs unit can run another 5–6 yrs.",
+            "Ground floor open plan + kitchen partial (must-have): take down living/parlor wall, corner pantry, booth refresh — not full kitchen overhaul",
+            "$8–18k",
+            "$25–45k",
+            "~2×",
+            "Existing wall comes down; it does not move. Cost varies only if a beam or structural header is required. Full GF kitchen overhaul ($55–95k) is Phase 2 nice-to-have.",
           ],
           [
             "6",
-            "Add a 3rd bathroom upstairs (small en-suite off the largest bedroom or a guest 1/2 bath)",
-            "$20–35k",
-            "$35–55k",
-            "~1.6×",
-            "Not strictly required — each unit gets a bath after separation — but raises achievable upper-unit rent ~$300–500/mo. Stack plumbing above existing wet wall.",
+            "Basement moisture + exterior utility (must-have): test-first seal/coating; freeze-protected front hose spigot + weather-rated outlet",
+            "$3–8k",
+            "$6–15k",
+            "~1.5×",
+            "Moisture test ($500–1k) before selecting seal system. Exterior outlet should be GFCI/weatherproof. Full basement floor replacement is Phase 2.",
           ],
           [
             "7",
-            "Roof replacement (Phase 2, yr 2–4): full modified-bitumen / TPO + parapet flashing + add R-49 roof insulation (currently none)",
-            "$28–48k",
-            "$45–70k",
-            "~1.5×",
-            "Current roof rated 'fair' but 14–16 yrs old of an 18–20 yr life. Silver coating is a stopgap. Combine with insulation — eligible for utility rebates. Don't defer past yr 4.",
+            "Cellar paperwork de-risk + sewer lateral camera scope",
+            "$3.5–25k",
+            "$15–75k",
+            "~3×",
+            "Back-file basement finishes; camera $400–800. Repair budget only if scope shows defects — insurance against $40–80k emergency.",
           ],
           [
             "8",
-            "Backyard upgrade: composite deck above existing patio, planters, new fence, low-volt lighting",
-            "$15–30k",
-            "$25–40k",
-            "~1.4×",
-            "Rear yard is the weakest exterior element. Brooklyn buyers heavily weight outdoor space.",
+            "Full vision nice-to-haves (Phase 2): GF kitchen overhaul, sound-dampening flooring entire top floor with new flooring, parlor → bedroom, entry built-ins, storage built into wall under stairs, basement floor",
+            "$115–215k",
+            "$80–150k",
+            "~0.7×",
+            "Lifestyle and resale lift — defer until Phase 1 complete and rental cash flow established.",
           ],
           [
             "9",
-            "Front entry safety package: tighten/replace front handrails, regrade/replace settled walkway, seal Bilco basement door, rebuild uneven basement stair risers",
-            "$4–10k",
-            "$8–18k",
+            "Roof replacement (Phase 3, yr 2–4): modified-bitumen / TPO + parapet flashing + R-49 insulation",
+            "$28–48k",
+            "$45–70k",
             "~1.5×",
-            "Required for any tenant occupancy + curb appeal at resale. Some items (stairs, walkway) can be seller punch list pre-closing.",
+            "14–16 yrs old of 18–20 yr life. Don't defer past yr 4.",
           ],
           [
             "10",
-            "Rear brick repointing, secure cellar egress window, paint exterior trim at rear",
-            "$5–12k",
-            "$8–18k",
+            "Backyard upgrade: composite deck, planters, fence, low-volt lighting",
+            "$15–30k",
+            "$25–40k",
             "~1.4×",
-            "Front facade is immaculate. Rear brick shows older mortar.",
+            "Phase 3 deferred. Rear yard is weakest exterior element.",
           ],
           [
             "11",
-            "Sewer lateral camera scope + spot repair if needed (inspector flagged original mixed-material waste lines)",
-            "$0.5–15k",
-            "Loss-avoidance",
-            "—",
-            "Camera $400–800 alone. Budget for repair only if scope shows defects. Insurance against $40–80k emergency.",
+            "Cosmetic refresh + electrical-safety punch list + front entry safety + rear brick",
+            "$15–37k",
+            "$41–86k",
+            "~2×",
+            "Repaint, refinish GF floor, panel covers, handrails, walkway, Bilco seal, rear repointing — batch between rental turns or pre-sale.",
           ],
           [
             "12",
@@ -1438,13 +1959,13 @@ export default function DueDiligence() {
             "$0.3–1k / yr",
             "Extends life 5–7 yrs",
             "—",
-            "Boiler is 2013 (12–13 yrs of 18–20) — replacing now would waste 5–7 yrs of useful life. Annual service + run another 5 yrs.",
+            "2013 boiler + 2019 indirect tank — 5+ yrs remaining. Annual service only.",
           ],
         ]}
       />
 
       <H3>Recommended phased budget</H3>
-      <Grid columns={3} gap={16}>
+      <Grid columns={2} gap={16}>
         <Card>
           <CardHeader>Phase 0 — pre-signing / pre-closing (contract leverage)</CardHeader>
           <CardBody>
@@ -1469,40 +1990,69 @@ export default function DueDiligence() {
           </CardBody>
         </Card>
         <Card>
-          <CardHeader>Phase 1 — within 6 months of closing</CardHeader>
+          <CardHeader>Phase 1 — within 6 months of closing (must-haves)</CardHeader>
           <CardBody>
             <Stack gap={4}>
               <Text>
-                Goal: lock in rental cash flow + de-risk legal exposure.
+                Goal: execute owner must-haves, restore legal 2-family separation,
+                and clear inspection/legal de-risk items.
               </Text>
-              <Text>· Restore legal 2-family separation</Text>
-              <Text>· Cellar paperwork de-risk (back-file finishes)</Text>
-              <Text>· Replace 2 failed mini-splits (net of credit)</Text>
-              <Text>· Add upstairs 3rd bathroom (if renting upper)</Text>
-              <Text>· Pre-closing sewer scope; service contract on boiler</Text>
-              <Text weight="semibold">Budget: $55–115k</Text>
+              <Text>· Top-floor kitchen (tie-in to existing gas/water stubs)</Text>
+              <Text>· Top-floor bath: add shower to tub, tile/regrout, tankless + bypass</Text>
+              <Text>· Bedroom drywall removal + full-height closet</Text>
+              <Text>· Banister closure: full wall + transom (separates unit from stair)</Text>
+              <Text>· Second dedicated internet cable chase</Text>
+              <Text>· GF open plan: take down living/parlor wall</Text>
+              <Text>· GF kitchen: pantry + booth refresh (not full overhaul)</Text>
+              <Text>· Basement moisture mitigation (test-first)</Text>
+              <Text>· Front exterior hose spigot + weather-rated outlet</Text>
+              <Text>· Legal close-out: fire door, smoke/CO, DOB filing (utilities already done)</Text>
+              <Text>· Cellar back-file + sewer scope tracked separately if desired</Text>
+              <Text weight="semibold">Architectural budget: $42–86k (excludes credited mini-splits)</Text>
               <Text tone="secondary">
-                Expected outcome: $36–48k/yr gross rent on the non-owner unit,
-                ~$500–700k added equity at refinance / resale, cellar
-                liability removed.
+                Expected outcome: legal unit-separated 2-family, owner must-haves
+                complete, $36–48k/yr gross rent on non-owner unit. Cash scope is
+                mostly drywall, replumb tie-ins, bath work, and one GF wall
+                coming down — not new utility infrastructure.
               </Text>
             </Stack>
           </CardBody>
         </Card>
         <Card>
-          <CardHeader>Phase 2 — years 2–4</CardHeader>
+          <CardHeader>Phase 2 — years 1–3 (full vision nice-to-haves)</CardHeader>
           <CardBody>
             <Stack gap={4}>
-              <Text>Goal: roof + incremental resale lift.</Text>
+              <Text>
+                Goal: lifestyle upgrades and incremental resale lift — only after
+                Phase 1 is complete and cash flow is established.
+              </Text>
+              <Text>· Full ground-floor kitchen overhaul (pocket doors, island, ice maker)</Text>
+              <Text>· Sound-dampening flooring entire top floor with new flooring</Text>
+              <Text>· Parlor → bedroom conversion</Text>
+              <Text>· Entry built-in coat/shoe storage</Text>
+              <Text>· Storage built into wall under stairs + stair refurbishment</Text>
+              <Text>· Basement full floor replacement</Text>
+              <Text weight="semibold">Budget: $115–215k</Text>
+              <Text tone="secondary">
+                Expected outcome: $80–150k additional resale lift + owner
+                comfort upgrades. Not required for occupancy or separation.
+              </Text>
+            </Stack>
+          </CardBody>
+        </Card>
+        <Card>
+          <CardHeader>Phase 3 — years 2–4 (deferred maintenance)</CardHeader>
+          <CardBody>
+            <Stack gap={4}>
+              <Text>Goal: roof, exterior, and cosmetic refresh.</Text>
               <Text>· Roof replacement + add R-49 roof insulation</Text>
               <Text>· Backyard: composite deck, fence, lighting</Text>
-              <Text>· Combine 80 sf bedroom into a primary suite</Text>
-              <Text>· Cosmetic refresh between rental turns</Text>
-              <Text>· Rear brick repointing</Text>
-              <Text weight="semibold">Budget: $60–125k</Text>
+              <Text>· Cosmetic refresh + electrical punch list between turns</Text>
+              <Text>· Rear brick repointing + front entry safety package</Text>
+              <Text weight="semibold">Budget: $58–115k</Text>
               <Text tone="secondary">
-                Expected outcome: $80–140k of additional resale lift +
-                $1.5–3k/yr operating cost reduction from new insulation +
+                Expected outcome: $86–156k additional resale lift +
+                $1.5–3k/yr operating cost reduction from insulation +
                 heat-pump efficiency.
               </Text>
             </Stack>
@@ -1510,35 +2060,36 @@ export default function DueDiligence() {
         </Card>
       </Grid>
 
-      <H3>Where the Phase 1 + 2 dollars go</H3>
+      <H3>Where the Phase 1–3 dollars go</H3>
       <Grid columns={2} gap={16}>
         <PieChart
           donut
           data={[
-            { label: "2-family separation", value: 43, tone: "success" },
-            { label: "Roof + insulation (Phase 2)", value: 35, tone: "warning" },
-            { label: "Add 3rd bath upstairs", value: 28, tone: "info" },
-            { label: "Backyard / deck", value: 22 },
-            { label: "Rear brick + sewer", value: 12 },
-            { label: "Cosmetic + electrical safety", value: 10 },
-            { label: "Combine bedroom", value: 10 },
-            { label: "Cellar paperwork", value: 7 },
-            { label: "HVAC (net of seller credit)", value: 6, tone: "danger" },
-            { label: "Front entry safety", value: 6 },
+            { label: "Top-floor kitchen (tie-in)", value: 22, tone: "success" },
+            { label: "2-family close-out", value: 7, tone: "success" },
+            { label: "Top-floor bath", value: 13, tone: "success" },
+            { label: "Banister + wall removal + closet", value: 12, tone: "success" },
+            { label: "GF wall removal + pantry/booth", value: 8, tone: "success" },
+            { label: "Full vision (Phase 2)", value: 165, tone: "info" },
+            { label: "Roof + deferred (Phase 3)", value: 87, tone: "warning" },
+            { label: "Basement + hose/outlet", value: 4 },
+            { label: "Cellar + sewer de-risk", value: 10 },
           ]}
           size={240}
         />
         <Stack gap={6}>
-          <Text weight="semibold">Total Phase 1 + 2 budget: $115–240k</Text>
+          <Text weight="semibold">Architectural Phase 1: $42–86k</Text>
+          <Text weight="semibold">Full project (Phases 1–3): $215–416k</Text>
           <Text tone="secondary">
-            Largest lines: 2-family separation, roof + insulation (Phase 2),
-            and optional upstairs 3rd bath. HVAC net cost and roof replacement
-            are the main variables in the total range.
+            Phase 1 is dominated by kitchen tie-in, bath wet work, and drywall
+            (banister closure, bedroom, one GF wall removal) — not utility
+            separation, which is already in place. Credited mini-splits are not
+            part of the architectural budget.
           </Text>
           <Text>
             <Text weight="semibold">Projected post-renovation value:</Text>{" "}
             $1.85–2.10M (vs $1.25M contract) once re-listed as a fully legal,
-            unit-separated 2-family with a new roof.
+            unit-separated 2-family with must-haves complete and roof replaced.
           </Text>
           <Text>
             <Text weight="semibold">Cash-on-cash from rental:</Text> $25–34k
@@ -1587,7 +2138,12 @@ export default function DueDiligence() {
             mitigation. Worst case is a belated ACP filing — typically $3–10k.
           </Text>
           <Text>
-            · Roof replacement is Phase 2 (yr 2–4): inspection clocks the
+            · Phase 1 budget reflects owner must-haves (see renovation brief
+            above), not generic items like a 3rd upstairs bath or bedroom
+            combine. Full ground-floor kitchen overhaul is Phase 2 nice-to-have.
+          </Text>
+          <Text>
+            · Roof replacement is Phase 3 (yr 2–4): inspection clocks the
             existing rolled-rubber roof at 14–16 yrs of an 18–20 yr design
             life. Plan, don&apos;t panic — but don&apos;t defer past yr 4.
           </Text>
@@ -1741,8 +2297,9 @@ export default function DueDiligence() {
                 Contract (R-5, Second Rider) and 2014 deed (Doc 2014091701074001
                 — &quot;DWELLING ONLY — 2 FAMILY&quot;) confirm 2-family
                 classification. Ground floor already has its own kitchen,
-                bath, and entry. Re-separation ROI still ~14× ($530–715k
-                value on $30–55k work).
+                bath, and entry. Utilities already separated — close-out is
+                fire door + filing (~$4–10k); must-have finish work ~$42–86k.
+                Re-separation ROI still ~14× on capitalized rental income.
               </Text>
               <Text>
                 <Text weight="semibold">Turn-key finishes.</Text> Updated
