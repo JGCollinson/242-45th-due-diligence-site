@@ -1230,17 +1230,17 @@ export default function DueDiligence() {
           "success",
           "success",
           "success",
-          undefined,
-          "success",
-          "success",
           "success",
           undefined,
-          undefined,
-          undefined,
+          "success",
           undefined,
           undefined,
           "success",
           undefined,
+          undefined,
+          undefined,
+          undefined,
+          "success",
           "success",
         ]}
         rows={[
@@ -1283,6 +1283,11 @@ export default function DueDiligence() {
             "Ground floor — Living / parlor",
             "Must-have",
             "Take down the existing wall separating living room and parlor to create a larger, flexible open zone. This is a removal scope, not a wall relocation; confirm whether the wall is load-bearing before bidding.",
+          ],
+          [
+            "Ground floor — Rear blow-out (Phase 2A)",
+            "Nice-to-have",
+            "Open rear wall within footprint (Option A): steel lintel + large sliding/folding glass or black-steel windows, rear deck flush with kitchen, backyard finish, rear brick repointing — single mobilization. Alt-2 only; confirm ZoLa zoning. Pairs with living/parlor wall removal for Windsor Terrace–style owner parlor.",
           ],
           [
             "Ground floor — Parlor",
@@ -1355,6 +1360,10 @@ export default function DueDiligence() {
             "Infrastructure",
             "Second internet cable path, chase locations, and termination point (must-have).",
           ],
+          [
+            "Rear wall opening (Phase 2A)",
+            "Confirm underlying zoning district on ZoLa (IBZ overlay — extension may be prohibited if lot is M-district). Option A: steel lintel + glazing within existing footprint only (Alt-2). Structural header sizing for full-width opening at kitchen/dining rear wall.",
+          ],
         ]}
       />
 
@@ -1408,8 +1417,7 @@ export default function DueDiligence() {
           "success",
           "success",
           "success",
-          "success",
-          "success",
+          "info",
           undefined,
           undefined,
           undefined,
@@ -1444,25 +1452,32 @@ export default function DueDiligence() {
             "Must-have design + legal close-out only. Excludes credited mini-splits and other non-architectural due diligence.",
           ],
           [
-            "2 — Full vision (nice-to-have)",
+            "2A — Rear-of-house blow-out (Option A)",
+            "Open rear wall within footprint: steel lintel + masonry + waterproofing · large sliding/folding glass or black-steel windows · rear deck/landing · backyard hardscape + planting · rear brick repointing (same mobilization as wall cut)",
+            "$65–127k",
+            "$50–90k",
+            "Target ~$100k bundled. Alt-2 only — no added sq ft. Owner GF unit only; does not raise upstairs rent. Pull rear brick + yard from Phase 3. Windsor Terrace–style light + indoor/outdoor flow.",
+          ],
+          [
+            "2B — Full vision (nice-to-have)",
             "GF kitchen full overhaul (pocket doors, island, ice maker) · sound-dampening flooring entire top floor with new flooring · parlor → bedroom · entry built-ins · under-stair wall storage + stair refurb · basement floor replacement",
             "$115–215k",
             "$80–150k",
-            "Lifestyle and resale lift. Phase after must-haves and rental cash flow.",
+            "Lifestyle and resale lift. Phase after must-haves, rental cash flow, and optionally after 2A rear blow-out.",
           ],
           [
             "3 — Deferred maintenance",
-            "Roof + R-49 insulation · backyard deck/fence · cosmetic refresh · rear brick · front entry safety",
-            "$58–115k",
-            "$86–156k",
-            "Original Phase 2 items — schedule yr 2–4, not blocked by must-haves.",
+            "Roof + R-49 insulation · cosmetic refresh · front entry safety",
+            "$38–73k",
+            "$70–120k",
+            "Backyard + rear brick moved to Phase 2A if pursuing rear blow-out. Schedule yr 2–4.",
           ],
           [
             "Full project total",
-            "Phases 1–3",
-            "$222–442k",
+            "Phases 1–3 (incl. 2A rear blow-out)",
+            "$265–511k",
             "—",
-            "Must-haves + close-out (~$42–86k) achieve legal 2-family + owner program; full vision is incremental.",
+            "Must-haves + close-out (~$42–86k) achieve legal 2-family + owner program; 2A (~$100k) is the Windsor Terrace–inspired owner parlor upgrade.",
           ],
         ]}
       />
@@ -1790,6 +1805,124 @@ export default function DueDiligence() {
         does not.
       </Text>
 
+      <H3>Rear-of-house / Phase 2 blow-out (Option A)</H3>
+      <Text tone="secondary">
+        Windsor Terrace–inspired owner upgrade: open the ground-floor rear wall
+        within the existing footprint — steel lintel, large glazing, deck, and
+        finished yard. Applies to the <Text weight="semibold">owner&apos;s ground-floor
+        unit only</Text>; upstairs rental stays a separate, fire-separated unit
+        (closed banister + fire door). Inspiration:{" "}
+        <Link href="https://www.brownstoner.com/interiors-renovation/windsor-terrace-reno">
+          Brownstoner — Windsor Terrace reno
+        </Link>
+        .
+      </Text>
+
+      <Callout tone="success" title="Option A — open the rear wall (Alt-2, no added square footage)">
+        <Stack gap={6}>
+          <Text>
+            Replace the ground-floor rear wall (kitchen + dining) with a steel
+            lintel and large sliding/folding glass or black-steel windows. Pair
+            with the <Text weight="semibold">Phase 1 must-have living/parlor wall
+            removal</Text> for a front-to-back open owner parlor — the Windsor
+            Terrace effect, confined to your floor. No footprint extension; permit
+            as Alt-2 alteration.
+          </Text>
+          <Text>
+            <Text weight="semibold">Skip the basement dig-out.</Text> Windsor
+            Terrace dug 20&quot; for a playroom; your cellar is non-rentable and
+            underpinning runs $50–150k+ with poor ROI. Moisture mitigation +
+            finish per your brief instead.
+          </Text>
+          <Text>
+            <Text weight="semibold">Zoning checkpoint (resolve before design):</Text>{" "}
+            lot sits in an IBZ overlay. Confirm the underlying district on{" "}
+            <Link href="https://zola.planning.nyc.gov/l/lot/3/745/26">
+              ZoLa (Block 745, Lot 26)
+            </Link>
+            . Option A stays within the footprint regardless. A rear{" "}
+            <em>extension</em> (Option B) may be prohibited if the lot is
+            M-district (non-conforming residential enlargement) or blocked by
+            rear-yard / FAR limits — not part of this scope.
+          </Text>
+        </Stack>
+      </Callout>
+
+      <img
+        src={`${import.meta.env.BASE_URL}242-45th-rear-blowout-plan.svg`}
+        alt="Accurate concept plan from Sotheby's dimensions: ground floor owner unit with lounge, living, dining, kitchen at rear; Phase 1 wall removal and Phase 2A rear glazing; first floor rental with banister closure; rear elevation of kitchen wall"
+        style={{
+          width: "100%",
+          maxWidth: 920,
+          borderRadius: 8,
+          border: "1px solid var(--border-subtle, #e5e5e5)",
+        }}
+      />
+      <Text tone="tertiary" size="small">
+        Drawn from the listing floor plan (Daniel Gale Sotheby&apos;s): stair
+        hall on the left, bay-window lounge at front, kitchen at rear
+        (9&apos;9&quot; × 16&apos;). Red hatch = Phase 1 living/parlor wall
+        removal; blue band = Phase 2A rear wall replaced with glazing + deck.
+        First-floor panel shows rental unit with banister fire wall — not part
+        of blow-out. Not a survey or construction document.
+      </Text>
+
+      <Table
+        headers={["Line item", "Scope", "Est. cost (NYC, permitted)", "Notes"]}
+        rows={[
+          [
+            "Rear wall opening",
+            "Demo rear masonry, steel lintel/header, structural patch, waterproofing, flashing",
+            "$20–35k",
+            "Full-width opening at kitchen/dining. Coordinate with rear brick repointing.",
+          ],
+          [
+            "Glazing package",
+            "Multi-panel sliding/folding doors or black-steel window wall; low-E, thermally broken",
+            "$15–30k",
+            "Largest single finish decision. Floor-to-ceiling for Windsor Terrace effect.",
+          ],
+          [
+            "Rear deck / landing",
+            "Composite or ipe deck flush with kitchen floor; guardrail; stair to yard",
+            "$10–20k",
+            "Indoor/outdoor continuity — key to making the narrow house feel larger.",
+          ],
+          [
+            "Backyard finish",
+            "Hardscape, planting, fence upgrade, low-voltage lighting",
+            "$15–30k",
+            "Pulled forward from deferred Phase 3 — do with wall opening, not before.",
+          ],
+          [
+            "Rear brick repointing",
+            "Spot or full rear elevation repointing at opening",
+            "$5–12k",
+            "Same mobilization as wall cut — never repoint then cut later.",
+          ],
+          [
+            "Phase 2A bundle total",
+            "Single GC mobilization — rear of house",
+            "$65–127k",
+            "Target ~$100k mid. Lifestyle + resale lift for owner unit; does not increase upstairs rent.",
+          ],
+        ]}
+        rowTone={[undefined, undefined, undefined, undefined, undefined, "success"]}
+      />
+
+      <Grid columns={3} gap={12}>
+        <Stat value="Alt-2" label="Permit type (no added sq ft)" tone="success" />
+        <Stat value="~$100k" label="Target bundle (mid)" tone="info" />
+        <Stat value="Owner GF" label="Beneficiary — not rental income" tone="warning" />
+      </Grid>
+
+      <Text tone="tertiary" size="small">
+        Sequencing: complete Phase 1 (unit separation + GF living/parlor wall
+        removal) first, then Phase 2A as one rear-of-house contract. Optional
+        add-ons in same pass: expose one party-wall brick + salvaged-joist mantel
+        (~$3–8k), skylight at stair core for rental light (~$5–12k).
+      </Text>
+
       <Callout tone="warning" title="The single biggest cost drag is the HVAC failure">
         <Text>
           Two of three mini-splits failed at inspection. Even with a generous
@@ -1813,18 +1946,19 @@ export default function DueDiligence() {
           "GF wall removal + pantry/booth",
           "Basement + hose/outlet",
           "Cellar + sewer de-risk",
-          "Full vision (Phase 2)",
+          "Rear blow-out (Phase 2A)",
+          "Full vision (Phase 2B)",
           "Roof + deferred (Phase 3)",
         ]}
         series={[
           {
             name: "Cost (midpoint, $k)",
-            data: [7, 22, 10, 12, 8, 4, 10, 165, 87],
+            data: [7, 22, 10, 12, 8, 4, 10, 96, 165, 56],
             tone: "warning",
           },
           {
             name: "Projected value add ($k)",
-            data: [620, 45, 25, 30, 40, 10, 31, 115, 121],
+            data: [620, 45, 25, 30, 40, 10, 31, 70, 115, 95],
             tone: "success",
           },
         ]}
@@ -1923,14 +2057,22 @@ export default function DueDiligence() {
           ],
           [
             "8",
-            "Full vision nice-to-haves (Phase 2): GF kitchen overhaul, sound-dampening flooring entire top floor with new flooring, parlor → bedroom, entry built-ins, storage built into wall under stairs, basement floor",
-            "$115–215k",
-            "$80–150k",
-            "~0.7×",
-            "Lifestyle and resale lift — defer until Phase 1 complete and rental cash flow established.",
+            "Rear-of-house blow-out (Phase 2A, Option A): open GF rear wall — steel lintel + large glazing + rear deck + backyard finish + rear brick repointing (single mobilization)",
+            "$65–127k",
+            "$50–90k",
+            "~0.8×",
+            "Windsor Terrace–inspired owner parlor upgrade. Alt-2 only, no added sq ft. Target ~$100k. Does not raise upstairs rent — lifestyle + resale. Confirm ZoLa zoning before any extension talk; skip basement dig-out.",
           ],
           [
             "9",
+            "Full vision nice-to-haves (Phase 2B): GF kitchen overhaul, sound-dampening flooring entire top floor with new flooring, parlor → bedroom, entry built-ins, storage built into wall under stairs, basement floor",
+            "$115–215k",
+            "$80–150k",
+            "~0.7×",
+            "Lifestyle and resale lift — defer until Phase 1 complete and optionally after 2A rear blow-out.",
+          ],
+          [
+            "10",
             "Roof replacement (Phase 3, yr 2–4): modified-bitumen / TPO + parapet flashing + R-49 insulation",
             "$28–48k",
             "$45–70k",
@@ -1938,20 +2080,12 @@ export default function DueDiligence() {
             "14–16 yrs old of 18–20 yr life. Don't defer past yr 4.",
           ],
           [
-            "10",
-            "Backyard upgrade: composite deck, planters, fence, low-volt lighting",
-            "$15–30k",
-            "$25–40k",
-            "~1.4×",
-            "Phase 3 deferred. Rear yard is weakest exterior element.",
-          ],
-          [
             "11",
-            "Cosmetic refresh + electrical-safety punch list + front entry safety + rear brick",
-            "$15–37k",
-            "$41–86k",
+            "Cosmetic refresh + electrical-safety punch list + front entry safety",
+            "$10–25k",
+            "$25–50k",
             "~2×",
-            "Repaint, refinish GF floor, panel covers, handrails, walkway, Bilco seal, rear repointing — batch between rental turns or pre-sale.",
+            "Repaint, refinish GF floor, panel covers, handrails, walkway, Bilco seal — batch between rental turns or pre-sale. Rear brick + backyard now in Phase 2A if pursuing blow-out.",
           ],
           [
             "12",
@@ -2019,12 +2153,35 @@ export default function DueDiligence() {
           </CardBody>
         </Card>
         <Card>
-          <CardHeader>Phase 2 — years 1–3 (full vision nice-to-haves)</CardHeader>
+          <CardHeader>Phase 2A — rear blow-out (Option A, target ~$100k)</CardHeader>
           <CardBody>
             <Stack gap={4}>
               <Text>
-                Goal: lifestyle upgrades and incremental resale lift — only after
-                Phase 1 is complete and cash flow is established.
+                Goal: Windsor Terrace–style owner parlor — light, indoor/outdoor
+                flow on the ground floor only. Alt-2 within existing footprint.
+              </Text>
+              <Text>· Open GF rear wall: steel lintel + masonry + waterproofing</Text>
+              <Text>· Large sliding/folding glass or black-steel window wall</Text>
+              <Text>· Rear deck flush with kitchen floor + stair to yard</Text>
+              <Text>· Backyard hardscape, planting, fence, lighting</Text>
+              <Text>· Rear brick repointing (same mobilization as wall cut)</Text>
+              <Text>· Confirm ZoLa underlying zoning — no extension in this scope</Text>
+              <Text weight="semibold">Budget: $65–127k (target ~$100k mid)</Text>
+              <Text tone="secondary">
+                Sequence after Phase 1. Pairs with living/parlor wall removal
+                already in must-haves. Owner lifestyle + resale — does not raise
+                upstairs rent.
+              </Text>
+            </Stack>
+          </CardBody>
+        </Card>
+        <Card>
+          <CardHeader>Phase 2B — years 1–3 (full vision nice-to-haves)</CardHeader>
+          <CardBody>
+            <Stack gap={4}>
+              <Text>
+                Goal: remaining lifestyle upgrades — after Phase 1 and optionally
+                after 2A rear blow-out.
               </Text>
               <Text>· Full ground-floor kitchen overhaul (pocket doors, island, ice maker)</Text>
               <Text>· Sound-dampening flooring entire top floor with new flooring</Text>
@@ -2044,16 +2201,15 @@ export default function DueDiligence() {
           <CardHeader>Phase 3 — years 2–4 (deferred maintenance)</CardHeader>
           <CardBody>
             <Stack gap={4}>
-              <Text>Goal: roof, exterior, and cosmetic refresh.</Text>
+              <Text>Goal: roof, exterior punch list, cosmetic refresh.</Text>
               <Text>· Roof replacement + add R-49 roof insulation</Text>
-              <Text>· Backyard: composite deck, fence, lighting</Text>
               <Text>· Cosmetic refresh + electrical punch list between turns</Text>
-              <Text>· Rear brick repointing + front entry safety package</Text>
-              <Text weight="semibold">Budget: $58–115k</Text>
+              <Text>· Front entry safety package (handrails, walkway, Bilco)</Text>
+              <Text weight="semibold">Budget: $38–73k</Text>
               <Text tone="secondary">
-                Expected outcome: $86–156k additional resale lift +
-                $1.5–3k/yr operating cost reduction from insulation +
-                heat-pump efficiency.
+                Backyard + rear brick repointing moved to Phase 2A if pursuing
+                rear blow-out. Expected outcome: $70–120k resale lift +
+                $1.5–3k/yr operating cost reduction from insulation.
               </Text>
             </Stack>
           </CardBody>
@@ -2070,8 +2226,9 @@ export default function DueDiligence() {
             { label: "Top-floor bath", value: 13, tone: "success" },
             { label: "Banister + wall removal + closet", value: 12, tone: "success" },
             { label: "GF wall removal + pantry/booth", value: 8, tone: "success" },
-            { label: "Full vision (Phase 2)", value: 165, tone: "info" },
-            { label: "Roof + deferred (Phase 3)", value: 87, tone: "warning" },
+            { label: "Rear blow-out (Phase 2A)", value: 96, tone: "info" },
+            { label: "Full vision (Phase 2B)", value: 165, tone: "info" },
+            { label: "Roof + deferred (Phase 3)", value: 56, tone: "warning" },
             { label: "Basement + hose/outlet", value: 4 },
             { label: "Cellar + sewer de-risk", value: 10 },
           ]}
@@ -2079,7 +2236,8 @@ export default function DueDiligence() {
         />
         <Stack gap={6}>
           <Text weight="semibold">Architectural Phase 1: $42–86k</Text>
-          <Text weight="semibold">Full project (Phases 1–3): $215–416k</Text>
+          <Text weight="semibold">Phase 2A rear blow-out: $65–127k (target ~$100k)</Text>
+          <Text weight="semibold">Full project (Phases 1–3 incl. 2A): $265–511k</Text>
           <Text tone="secondary">
             Phase 1 is dominated by kitchen tie-in, bath wet work, and drywall
             (banister closure, bedroom, one GF wall removal) — not utility
