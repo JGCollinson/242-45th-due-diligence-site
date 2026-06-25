@@ -1,6 +1,5 @@
-import React from "react";
+import { CanvasShell, React } from "cursor/canvas";
 import { createRoot } from "react-dom/client";
-import { CanvasShell } from "../vendor/canvas-runtime.esm.js";
 import DueDiligence from "./DueDiligence";
 
 const root = document.getElementById("root");

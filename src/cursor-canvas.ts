@@ -2,6 +2,7 @@
 export {
   BarChart,
   Callout,
+  CanvasShell,
   Card,
   CardBody,
   CardHeader,
@@ -14,6 +15,7 @@ export {
   Link,
   PieChart,
   Pill,
+  React,
   Row,
   Stack,
   Stat,

@@ -6,7 +6,9 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "build:pages": "VITE_BASE_PATH=/242-45th-due-diligence-site/ vite build",
+    "preview": "vite preview",
+    "preview:pages": "VITE_BASE_PATH=/242-45th-due-diligence-site/ vite build && vite preview --base /242-45th-due-diligence-site/"
   },
   "dependencies": {},
   "devDependencies": {

@@ -1,4 +1,5 @@
 import {
+  React,
   BarChart,
   Callout,
   Card,
@@ -18,6 +19,161 @@ import {
   Table,
   Text,
 } from "cursor/canvas";
+
+const HOME_EQUITY_RATE_ANNUAL = 0.1075;
+const BASELINE_TERM_YEARS = 20;
+const ACCELERATED_TERM_YEARS = 7;
+const LOAN_AMOUNT_MIN = 25000;
+const LOAN_AMOUNT_MAX = 150000;
+const LOAN_AMOUNT_STEP = 5000;
+const TERM_YEARS_MIN = 5;
+const TERM_YEARS_MAX = 20;
+const DEFAULT_LOAN_AMOUNT = 75000;
+const MONTHS_PER_YEAR = 12;
+
+function amortizedMonthlyPayment(principal: number, annualRate: number, years: number) {
+  const monthlyRate = annualRate / MONTHS_PER_YEAR;
+  const payments = years * MONTHS_PER_YEAR;
+  if (monthlyRate === 0) return principal / payments;
+  return (principal * monthlyRate) / (1 - Math.pow(1 + monthlyRate, -payments));
+}
+
+function loanCost(principal: number, annualRate: number, years: number) {
+  const monthly = amortizedMonthlyPayment(principal, annualRate, years);
+  const total = monthly * years * MONTHS_PER_YEAR;
+  return { monthly, total, interest: total - principal };
+}
+
+const usd0 = (value: number) =>
+  value.toLocaleString("en-US", { style: "currency", currency: "USD", maximumFractionDigits: 0 });
+
+function RenovationLoanCalculator() {
+  const [amount, setAmount] = React.useState(DEFAULT_LOAN_AMOUNT);
+  const [termYears, setTermYears] = React.useState(ACCELERATED_TERM_YEARS);
+
+  const selected = loanCost(amount, HOME_EQUITY_RATE_ANNUAL, termYears);
+  const baseline = loanCost(amount, HOME_EQUITY_RATE_ANNUAL, BASELINE_TERM_YEARS);
+  const interestSaved = baseline.interest - selected.interest;
+  const monthlyDelta = selected.monthly - baseline.monthly;
+
+  const sliderStyle: React.CSSProperties = { width: "100%", accentColor: "#2980b9", marginTop: 8 };
+  const labelRow: React.CSSProperties = {
+    display: "flex",
+    justifyContent: "space-between",
+    alignItems: "baseline",
+    gap: 12,
+  };
+
+  return (
+    <Card>
+      <CardHeader>Interactive: home equity loan (principal &amp; interest)</CardHeader>
+      <CardBody>
+        <Stack gap={16}>
+          <Text tone="secondary">
+            Fixed-rate, fully amortizing home equity loan assumed at{" "}
+            <Text weight="semibold">{(HOME_EQUITY_RATE_ANNUAL * 100).toFixed(2)}% APR</Text>.
+            Drag to size the loan and the payoff term. Baseline comparison is a{" "}
+            {BASELINE_TERM_YEARS}-year term. Not financial advice — confirm the
+            actual rate with your lender.
+          </Text>
+
+          <div>
+            <div style={labelRow}>
+              <Text weight="semibold">Loan amount</Text>
+              <Text weight="semibold">{usd0(amount)}</Text>
+            </div>
+            <input
+              type="range"
+              min={LOAN_AMOUNT_MIN}
+              max={LOAN_AMOUNT_MAX}
+              step={LOAN_AMOUNT_STEP}
+              value={amount}
+              onChange={(e) => setAmount(Number(e.target.value))}
+              style={sliderStyle}
+              aria-label="Loan amount"
+            />
+            <div style={labelRow}>
+              <Text tone="tertiary" size="small">{usd0(LOAN_AMOUNT_MIN)}</Text>
+              <Text tone="tertiary" size="small">{usd0(LOAN_AMOUNT_MAX)}</Text>
+            </div>
+          </div>
+
+          <div>
+            <div style={labelRow}>
+              <Text weight="semibold">Payoff term</Text>
+              <Text weight="semibold">{termYears} years</Text>
+            </div>
+            <input
+              type="range"
+              min={TERM_YEARS_MIN}
+              max={TERM_YEARS_MAX}
+              step={1}
+              value={termYears}
+              onChange={(e) => setTermYears(Number(e.target.value))}
+              style={sliderStyle}
+              aria-label="Payoff term in years"
+            />
+            <div style={labelRow}>
+              <Text tone="tertiary" size="small">{TERM_YEARS_MIN} yrs</Text>
+              <Text tone="tertiary" size="small">{TERM_YEARS_MAX} yrs</Text>
+            </div>
+          </div>
+
+          <Grid columns={3} gap={12}>
+            <Stat value={usd0(selected.monthly)} label={`Monthly payment (${termYears}-yr)`} tone="info" />
+            <Stat value={usd0(selected.interest)} label="Total interest" tone="warning" />
+            <Stat value={usd0(selected.total)} label="Total cost (principal + interest)" />
+          </Grid>
+
+          <Callout
+            tone={termYears < BASELINE_TERM_YEARS ? "success" : "info"}
+            title={
+              termYears < BASELINE_TERM_YEARS
+                ? `Paying off in ${termYears} years vs ${BASELINE_TERM_YEARS} years`
+                : `${BASELINE_TERM_YEARS}-year baseline selected`
+            }
+          >
+            <Text>
+              On {usd0(amount)} at {(HOME_EQUITY_RATE_ANNUAL * 100).toFixed(2)}%, a{" "}
+              {BASELINE_TERM_YEARS}-year payoff costs{" "}
+              <Text weight="semibold">{usd0(baseline.monthly)}/mo</Text> and{" "}
+              <Text weight="semibold">{usd0(baseline.interest)}</Text> in total
+              interest.{" "}
+              {termYears < BASELINE_TERM_YEARS ? (
+                <>
+                  Paying it off in {termYears} years raises the payment by{" "}
+                  <Text weight="semibold">{usd0(monthlyDelta)}/mo</Text> but saves{" "}
+                  <Text weight="semibold">{usd0(interestSaved)}</Text> in interest
+                  over the life of the loan.
+                </>
+              ) : (
+                <>Shorten the payoff slider to see interest savings from a faster payoff.</>
+              )}
+            </Text>
+          </Callout>
+
+          <BarChart
+            categories={[`${termYears}-yr payoff`, `${BASELINE_TERM_YEARS}-yr baseline`]}
+            series={[
+              {
+                name: "Principal",
+                data: [Math.round(amount / 1000), Math.round(amount / 1000)],
+                tone: "info",
+              },
+              {
+                name: "Interest",
+                data: [Math.round(selected.interest / 1000), Math.round(baseline.interest / 1000)],
+                tone: "warning",
+              },
+            ]}
+            height={200}
+            valueSuffix="k"
+          />
+        </Stack>
+      </CardBody>
+    </Card>
+  );
+}
 
 export default function DueDiligence() {
   return (
@@ -1487,9 +1643,9 @@ export default function DueDiligence() {
       <H2>Appraisal &amp; financing the renovation</H2>
       <Text tone="secondary">
         Bank appraisal (E-Value Appraisals, eff. 6/18/2026) and Rocket Mortgage
-        loan terms. Analysis of how to fund a $40–90k renovation: reduce the
-        down payment vs. a HELOC. Not financial advice — confirm with your
-        lender and a CPA before locking.
+        loan terms. Analysis of how to fund the renovation: reduce the down
+        payment vs. a fixed-rate home equity loan (principal &amp; interest).
+        Not financial advice — confirm with your lender and a CPA before locking.
       </Text>
 
       <Grid columns={4} gap={12}>
@@ -1543,12 +1699,12 @@ export default function DueDiligence() {
             "Lower rate on the full $1,062,500 loan, lower MI, faster MI removal. Rocket loan is currently set up this way.",
           ],
           [
-            "HELOC (add-on to B)",
+            "Home equity loan (add-on to B)",
             "—",
-            "10.75% / 20yr",
+            "10.75% fixed / 20yr",
             "—",
-            "$507.62 on $50k drawn",
-            "Funds the renovation; only the drawn balance bears interest and your first-mortgage rate stays at 6.50%.",
+            "~$761/mo on $75k (P&I)",
+            "Fully amortizing principal & interest — no interest-only draw period. Funds the renovation while your first-mortgage rate stays at 6.50%. See the interactive calculator below.",
           ],
         ]}
       />
@@ -1571,10 +1727,10 @@ export default function DueDiligence() {
             "Cheapest — if you keep a safety + HVAC/roof reserve after closing.",
           ],
           [
-            "HELOC $50k @ 10.75% / 20yr",
-            "10.75% on drawn balance",
+            "Home equity loan $75k @ 10.75% / 20yr (P&I)",
+            "10.75% fixed, fully amortizing",
             "No",
-            "Best borrowed-money option. Flexible bridge; repay or refinance later.",
+            "Best borrowed-money option. Fixed payment; pay off faster to cut total interest.",
           ],
           [
             "Drop to 10% down (frees $62.5k)",
@@ -1585,7 +1741,9 @@ export default function DueDiligence() {
         ]}
       />
 
-      <Callout tone="info" title="Bottom line: the HELOC is cheaper than reducing your down payment">
+      <RenovationLoanCalculator />
+
+      <Callout tone="info" title="Bottom line: the home equity loan is cheaper than reducing your down payment">
         <Stack gap={6}>
           <Text>
             Going from 15% down to 10% down raises your monthly payment by{" "}
@@ -1594,20 +1752,22 @@ export default function DueDiligence() {
             MI, not principal — about{" "}
             <Text weight="semibold">$7,600/yr</Text>, an effective{" "}
             <Text weight="semibold">~12.2%</Text> cost on the $62,500. That is
-            higher than the HELOC&apos;s 10.75%, because dropping to 10% down
-            bumps the rate <Text weight="semibold">0.25% on the entire
-            $1,062,500</Text> you would borrow anyway (~$2,650/yr of pure
-            penalty) and raises MI ~$60/mo.
+            higher than the home equity loan&apos;s 10.75% fixed rate, because
+            dropping to 10% down bumps the rate{" "}
+            <Text weight="semibold">0.25% on the entire $1,062,500</Text> you
+            would borrow anyway (~$2,650/yr of pure penalty) and raises MI
+            ~$60/mo.
           </Text>
           <Text>
             <Text weight="semibold">Smartest structure:</Text> take{" "}
             <Text weight="semibold">Option B (15% down, 6.50%)</Text> to lock the
             lower rate and lower MI on the whole loan, fund as much of the
             renovation as prudent from <Text weight="semibold">cash</Text>, and
-            use the <Text weight="semibold">HELOC only for the remainder</Text>.
-            The HELOC is a short-term bridge: after the renovation, the
-            $1.26M-plus appraisal supports dropping MI on reappraisal and/or a
-            cash-out refinance to retire the HELOC at first-mortgage rates.
+            cover the remainder with a{" "}
+            <Text weight="semibold">fixed home equity loan (P&amp;I)</Text>. A
+            shorter payoff (e.g. {ACCELERATED_TERM_YEARS} years instead of{" "}
+            {BASELINE_TERM_YEARS}) raises the monthly payment but materially cuts
+            total interest — use the calculator above to size it.
           </Text>
           <Text tone="secondary">
             Tax note: your acquisition debt already exceeds the $750k
@@ -1617,14 +1777,14 @@ export default function DueDiligence() {
         </Stack>
       </Callout>
 
-      <Callout tone="info" title="Exit path: clearing PMI and the HELOC by reappraisal or refinance (possible, not guaranteed)">
+      <Callout tone="info" title="Exit path: clearing PMI by reappraisal or refinance (possible, not guaranteed)">
         <Stack gap={6}>
           <Text>
             Because the renovation should raise the home&apos;s value, a{" "}
             <Text weight="semibold">second appraisal after the work is
-            completed</Text> could let you shed the mortgage insurance and unwind
-            the HELOC. There are two distinct mechanisms — and each has timing
-            limits, so this is a plausible plan, not a certainty.
+            completed</Text> could let you shed the mortgage insurance and, if you
+            wish, refinance the home equity loan into the first mortgage. Each has
+            timing limits, so this is a plausible plan, not a certainty.
           </Text>
           <Text>
             <Text weight="semibold">1. Cancel PMI on the existing loan (no
@@ -1643,21 +1803,24 @@ export default function DueDiligence() {
             <Text weight="semibold">2. Refinance into a new first mortgage.</Text>{" "}
             If the post-work appraisal puts you at ≤80% LTV, a refinance carries{" "}
             <Text weight="semibold">no PMI</Text>, and the{" "}
-            <Text weight="semibold">HELOC balance can be folded into the new
-            loan</Text> — eliminating the separate HELOC payment. Rate/term refis
-            usually have little or no seasoning; cash-out refis (which a HELOC
-            payoff can trigger) typically need <Text weight="semibold">~6–12
-            months</Text> of seasoning. A refinance only makes sense if rates at
-            that time produce a blended payment you like.
+            <Text weight="semibold">home equity loan balance can be folded into
+            the new loan</Text> — consolidating to one payment. Rate/term refis
+            usually have little or no seasoning; cash-out refis (which folding in a
+            home equity balance can trigger) typically need{" "}
+            <Text weight="semibold">~6–12 months</Text> of seasoning. A refinance
+            only makes sense if rates at that time produce a blended payment you
+            like.
           </Text>
           <Text tone="secondary">
-            One clarification: a <Text weight="semibold">HELOC does not carry
-            mortgage insurance</Text> — it just has its own higher, variable rate.
-            So what you would be eliminating is (a) PMI on the first mortgage and
-            (b) the HELOC balance itself. Whether and when either is achievable
-            depends on the post-work appraised value, your servicer/investor
-            rules, the seasoning windows above, and prevailing rates. Confirm the
-            specifics with Rocket and your loan servicer before relying on it.
+            Note: a fixed home equity loan carries{" "}
+            <Text weight="semibold">no mortgage insurance</Text> — it just has its
+            own rate and an amortizing P&amp;I payment. So what you would be
+            eliminating is (a) PMI on the first mortgage and (b) the separate home
+            equity payment if you consolidate. Whether and when either is
+            achievable depends on the post-work appraised value, your
+            servicer/investor rules, the seasoning windows above, and prevailing
+            rates. Confirm specifics with Rocket and your loan servicer before
+            relying on it.
           </Text>
         </Stack>
       </Callout>
@@ -1829,12 +1992,6 @@ export default function DueDiligence() {
             as Alt-2 alteration.
           </Text>
           <Text>
-            <Text weight="semibold">Skip the basement dig-out.</Text> Windsor
-            Terrace dug 20&quot; for a playroom; your cellar is non-rentable and
-            underpinning runs $50–150k+ with poor ROI. Moisture mitigation +
-            finish per your brief instead.
-          </Text>
-          <Text>
             <Text weight="semibold">Zoning checkpoint (resolve before design):</Text>{" "}
             lot sits in an IBZ overlay. Confirm the underlying district on{" "}
             <Link href="https://zola.planning.nyc.gov/l/lot/3/745/26">
@@ -1847,25 +2004,6 @@ export default function DueDiligence() {
           </Text>
         </Stack>
       </Callout>
-
-      <img
-        src={`${import.meta.env.BASE_URL}242-45th-rear-blowout-plan.svg`}
-        alt="Accurate concept plan from Sotheby's dimensions: ground floor owner unit with lounge, living, dining, kitchen at rear; Phase 1 wall removal and Phase 2A rear glazing; first floor rental with banister closure; rear elevation of kitchen wall"
-        style={{
-          width: "100%",
-          maxWidth: 920,
-          borderRadius: 8,
-          border: "1px solid var(--border-subtle, #e5e5e5)",
-        }}
-      />
-      <Text tone="tertiary" size="small">
-        Drawn from the listing floor plan (Daniel Gale Sotheby&apos;s): stair
-        hall on the left, bay-window lounge at front, kitchen at rear
-        (9&apos;9&quot; × 16&apos;). Red hatch = Phase 1 living/parlor wall
-        removal; blue band = Phase 2A rear wall replaced with glazing + deck.
-        First-floor panel shows rental unit with banister fire wall — not part
-        of blow-out. Not a survey or construction document.
-      </Text>
 
       <Table
         headers={["Line item", "Scope", "Est. cost (NYC, permitted)", "Notes"]}
@@ -2061,7 +2199,7 @@ export default function DueDiligence() {
             "$65–127k",
             "$50–90k",
             "~0.8×",
-            "Windsor Terrace–inspired owner parlor upgrade. Alt-2 only, no added sq ft. Target ~$100k. Does not raise upstairs rent — lifestyle + resale. Confirm ZoLa zoning before any extension talk; skip basement dig-out.",
+            "Windsor Terrace–inspired owner parlor upgrade. Alt-2 only, no added sq ft. Target ~$100k. Does not raise upstairs rent — lifestyle + resale. Confirm ZoLa zoning before any extension talk.",
           ],
           [
             "9",
